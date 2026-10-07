@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    background-color: #0D0503;
+    color: #F4EEE7;
+  }
+}
+
+.font-editorial {
+  font-family: var(--font-cormorant);
+}
+
+.font-sans-clean {
+  font-family: var(--font-inter);
+}
+
+/* Continuous floating oscillations (6-9s cycles between 4px and 8px) */
+@keyframes floatSlow1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0.4deg);
+  }
+}
+
+@keyframes floatSlow2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-0.5deg);
+  }
+}
+
+@keyframes floatSlow3 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatParticles {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-9px) translateX(4px);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSlow1 7.2s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatSlow2 8.5s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: floatSlow3 6.8s ease-in-out infinite;
+}
+
+.animate-particles {
+  animation: floatParticles 9s ease-in-out infinite;
+}
+
+@keyframes cubeStep {
+  0%,
+  20% {
+    transform: rotateY(0deg);
+  }
+
+  25%,
+  45% {
+    transform: rotateY(-90deg);
+  }
+
+  50%,
+  70% {
+    transform: rotateY(-180deg);
+  }
+
+  75%,
+  95% {
+    transform: rotateY(-270deg);
+  }
+
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+
+@keyframes cubeInfinite {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.cube-wrapper {
+  --cube-size: 260px;
+  --cube-depth: 130px;
+}
+
+@media (min-width: 380px) {
+  .cube-wrapper {
+    --cube-size: 300px;
+    --cube-depth: 150px;
+  }
+}
+
+@media (min-width: 480px) {
+  .cube-wrapper {
+    --cube-size: 340px;
+    --cube-depth: 170px;
+  }
+}
+
+@media (min-width: 640px) {
+  .cube-wrapper {
+    --cube-size: 380px;
+    --cube-depth: 190px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cube-wrapper {
+    --cube-size: 420px;
+    --cube-depth: 210px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cube-wrapper {
+    --cube-size: 460px;
+    --cube-depth: 230px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cube-wrapper {
+    --cube-size: 480px;
+    --cube-depth: 240px;
+  }
+}
+
