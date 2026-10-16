@@ -72,7 +72,7 @@ export const HomeExploreSection: React.FC<HomeExploreSectionProps> = ({ onNaviga
 
   return (
     <section className="relative w-full bg-[#070302] text-[#F7F1E8] py-16 sm:py-20 lg:py-24 border-t border-white/10 overflow-hidden">
-      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px]">
+      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px]">
         {/* Section Header */}
         <div className="mb-14 sm:mb-16">
           <div className="flex items-center gap-3 mb-3">

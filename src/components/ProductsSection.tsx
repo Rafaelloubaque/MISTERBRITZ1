@@ -4,7 +4,7 @@ import {
   Award, 
   ArrowRight, 
   CheckCircle2, 
-  TrendingUp, 
+  Repeat, 
   UtensilsCrossed, 
   Eye, 
   Download, 
@@ -80,7 +80,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
     { name: 'Praticidade', desc: 'Facilidade de manuseio no dia a dia', icon: Package },
     { name: 'Boa apresentação', desc: 'Embalagens que valorizam o ponto de venda', icon: Eye },
     { name: 'Competitividade', desc: 'Excelente relação custo-benefício para a cadeia', icon: Layers },
-    { name: 'Potencial de giro', desc: 'Alta aceitação e demanda constante no varejo', icon: TrendingUp },
+    { name: 'Potencial de giro', desc: 'Alta aceitação e demanda constante no varejo', icon: Repeat },
   ];
 
   const productsList: ProductCardData[] = [
@@ -185,7 +185,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#0A0403] via-transparent to-[#0A0403] opacity-90" />
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] select-none bg-[radial-gradient(#E8C991_1px,transparent_1px)] [background-size:24px_24px]" />
 
-      <div className="relative w-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px]">
+      <div className="relative w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px]">
         {/* ==================================================
             1. SOBRETÍTULO / EYEBROW
             ================================================== */}
@@ -382,10 +382,10 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
                     {/* Botão [ VER PRODUTO ] */}
                     <button
                       onClick={() => handleOpenProduct(product)}
-                      className="w-full py-3 px-4 rounded-xl bg-[#C11D31] hover:bg-[#a51829] text-white font-sans-clean text-xs font-bold tracking-[2px] uppercase transition-all duration-200 flex items-center justify-center gap-2 group/btn cursor-pointer shadow-md hover:shadow-lg active:scale-[0.99]"
+                      className="w-full py-3 px-4 rounded-xl bg-[#C11D31] hover:bg-[#a51829] text-white font-sans-clean text-[13px] md:text-[14px] font-bold tracking-[1.5px] uppercase transition-all duration-200 flex items-center justify-center gap-2 group/btn cursor-pointer shadow-md hover:shadow-lg active:scale-[0.99] whitespace-nowrap"
                     >
-                      <span>[ VER PRODUTO ]</span>
-                      <ArrowRight className="w-4 h-4 text-white group-hover/btn:translate-x-0.5 transition-transform" />
+                      <span className="whitespace-nowrap">[ VER PRODUTO ]</span>
+                      <ArrowRight className="w-4 h-4 text-white group-hover/btn:translate-x-0.5 transition-transform shrink-0" />
                     </button>
                   </div>
                 </div>
@@ -420,7 +420,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
             <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0">
               <button
                 onClick={() => onOpenModal('contact')}
-                className="w-full sm:w-auto px-3.5 sm:px-6 py-3.5 rounded-xl bg-[#E8C991] hover:bg-[#d8b87d] text-[#140806] font-sans-clean text-[11px] xs:text-xs font-bold tracking-wider sm:tracking-[1.5px] uppercase transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-md whitespace-nowrap"
+                className="w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl bg-[#E8C991] hover:bg-[#d8b87d] text-[#140806] font-sans-clean text-[13px] md:text-[14px] font-bold tracking-wider sm:tracking-[1.5px] uppercase transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-md whitespace-nowrap"
               >
                 <span className="whitespace-nowrap">FALAR COM EQUIPE COMERCIAL</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
@@ -428,7 +428,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
 
               <button
                 onClick={() => onOpenModal('products')}
-                className="w-full sm:w-auto px-3.5 sm:px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/15 font-sans-clean text-[11px] xs:text-xs font-bold tracking-wider sm:tracking-[1.5px] uppercase transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
+                className="w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/15 font-sans-clean text-[13px] md:text-[14px] font-bold tracking-wider sm:tracking-[1.5px] uppercase transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
               >
                 <Download className="w-4 h-4 text-[#E8C991] shrink-0" />
                 <span className="whitespace-nowrap">BAIXAR CATÁLOGO COMPLETO</span>

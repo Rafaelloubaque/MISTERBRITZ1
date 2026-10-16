@@ -55,7 +55,7 @@ export const HeroContent: React.FC<HeroContentProps> = ({ onOpenModal }) => {
       {/* Subtitle */}
       <p
         style={getAnimStyle(700)}
-        className="font-sans-clean font-normal text-[14px] xs:text-[15px] sm:text-[19px] xl:text-[21px] leading-[1.45] sm:leading-[1.35] text-white/90 max-w-[570px] mt-[14px] sm:mt-[20px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+        className="font-sans-clean font-normal text-[15px] sm:text-[19px] xl:text-[21px] leading-[1.45] sm:leading-[1.35] text-white/90 max-w-[570px] mt-[14px] sm:mt-[20px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
       >
         Alimentos desenvolvidos para fazer parte da rotina de milhares de pessoas e gerar boas oportunidades para quem vende.
       </p>
@@ -69,7 +69,7 @@ export const HeroContent: React.FC<HeroContentProps> = ({ onOpenModal }) => {
       {/* Second Text */}
       <p
         style={getAnimStyle(780)}
-        className="font-sans-clean font-normal text-[13px] sm:text-[16px] leading-[1.5] sm:leading-[1.42] text-white/85 max-w-[540px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]"
+        className="font-sans-clean font-normal text-[15px] sm:text-[16px] leading-[1.5] sm:leading-[1.42] text-white/85 max-w-[540px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]"
       >
         Indústria e distribuição de alimentos para supermercados, distribuidores, mercados, padarias, conveniências, honest markets e food service.
       </p>
@@ -82,7 +82,7 @@ export const HeroContent: React.FC<HeroContentProps> = ({ onOpenModal }) => {
         {/* Button 1: Conheça Nossos Produtos */}
         <button
           onClick={() => onOpenModal('products')}
-          className="h-[52px] sm:h-[64px] w-full sm:w-auto sm:min-w-[280px] px-4 sm:px-[30px] rounded-full bg-gradient-to-r from-[#8D1422] to-[#C11D31] text-white font-sans-clean text-[12px] xs:text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group shadow-lg whitespace-nowrap"
+          className="h-[52px] sm:h-[64px] w-full sm:w-auto sm:min-w-[280px] px-5 sm:px-[30px] rounded-full bg-gradient-to-r from-[#8D1422] to-[#C11D31] text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group shadow-lg whitespace-nowrap"
         >
           <span className="whitespace-nowrap">Conheça Nossos Produtos</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 shrink-0" strokeWidth={2} />
@@ -91,7 +91,7 @@ export const HeroContent: React.FC<HeroContentProps> = ({ onOpenModal }) => {
         {/* Button 2: Fale com o Comercial */}
         <button
           onClick={() => onOpenModal('contact')}
-          className="h-[52px] sm:h-[64px] w-full sm:w-auto sm:min-w-[240px] px-4 sm:px-[26px] rounded-full bg-white/[0.04] border-[1.5px] border-white/80 text-white font-sans-clean text-[12px] xs:text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:bg-white/10 hover:border-white cursor-pointer active:scale-[0.99] whitespace-nowrap"
+          className="h-[52px] sm:h-[64px] w-full sm:w-auto sm:min-w-[240px] px-5 sm:px-[26px] rounded-full bg-white/[0.04] border-[1.5px] border-white/80 text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:bg-white/10 hover:border-white cursor-pointer active:scale-[0.99] whitespace-nowrap"
         >
           <span className="whitespace-nowrap">Fale com o Comercial</span>
           <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" strokeWidth={2} />

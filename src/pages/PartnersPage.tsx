@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Handshake, PhoneCall, CheckCircle2, MessageCircle, Store, BadgePercent, TrendingUp } from 'lucide-react';
+import { Handshake, PhoneCall, CheckCircle2, MessageCircle, Store, BadgePercent, Award } from 'lucide-react';
 import { PageTopHero } from '../components/PageTopHero';
 import { PartnersAndCtaSection } from '../components/PartnersAndCtaSection';
 import { HERO_BACKGROUNDS } from '../assets/heroBackgrounds';
@@ -88,7 +88,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
             title: 'Potencial de Giro',
             value: 'Alta Frequência',
             subtitle: 'Itens essenciais para a cesta de compras',
-            icon: <TrendingUp className="w-4 h-4" />,
+            icon: <Award className="w-4 h-4" />,
           },
         ]}
         targetSectionId="parceiros"
@@ -103,29 +103,29 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
 
       {/* Direct In-Page B2B Partnership Application Form */}
       <div id="cadastro-parceiro" className="relative w-full bg-[#0E0604] border-t border-white/10 py-16 sm:py-24">
-        <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="relative z-10 w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* Left Context Column */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-sans-clean font-semibold uppercase tracking-wider text-[#E8C991]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[13px] font-sans-clean font-semibold uppercase tracking-wider text-[#E8C991]">
                 <Handshake className="w-4 h-4 text-[#C11D31]" />
                 <span>Formulário de Cadastro B2B</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-editorial font-bold text-white uppercase leading-tight">
+              <h2 className="text-[26px] md:text-[32px] lg:text-[38px] font-editorial font-bold text-white uppercase leading-tight">
                 Cadastre sua empresa e receba condições exclusivas
               </h2>
 
-              <p className="text-base text-white/80 font-sans-clean leading-relaxed">
+              <p className="text-[15px] md:text-[16px] text-white/80 font-sans-clean leading-relaxed">
                 Preencha seus dados para que um consultor comercial da sua região entre em contato com nossa tabela de preços atacado, política de faturamento e amostras.
               </p>
 
               <div className="p-6 rounded-2xl bg-[#190B08] border border-white/10 space-y-4">
-                <h4 className="text-sm font-editorial font-bold text-[#E8C991] uppercase">
+                <h4 className="text-[15px] font-editorial font-bold text-[#E8C991] uppercase">
                   O que você recebe ao se cadastrar:
                 </h4>
-                <ul className="space-y-2.5 text-xs text-white/75 font-sans-clean">
+                <ul className="space-y-2.5 text-[13px] text-white/75 font-sans-clean">
                   <li className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#E8C991]" />
                     Catálogo completo em PDF com fotos em alta resolução
@@ -149,40 +149,40 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                 <button
                   type="button"
                   onClick={handleWhatsAppDirect}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0A2612] font-sans-clean font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-md"
+                  className="w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0A2612] font-sans-clean font-bold text-[13px] uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-md whitespace-nowrap"
                 >
                   <MessageCircle className="w-4 h-4 fill-[#0A2612]" />
-                  <span>PREFERE FALAR NO WHATSAPP AGORA?</span>
+                  <span className="whitespace-nowrap">FALAR NO WHATSAPP AGORA</span>
                 </button>
               </div>
             </div>
 
             {/* Right Form Column */}
             <div className="lg:col-span-7">
-              <div className="p-8 sm:p-10 rounded-3xl bg-[#190B08] border border-[#E8C991]/30 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+              <div className="p-6 sm:p-10 rounded-3xl bg-[#190B08] border border-[#E8C991]/30 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
                 {isSubmitted ? (
                   <div className="py-12 text-center space-y-4">
                     <div className="w-16 h-16 rounded-full bg-[#25D366]/20 border border-[#25D366] text-[#25D366] flex items-center justify-center mx-auto">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h3 className="text-2xl font-editorial font-bold text-white uppercase">
+                    <h3 className="text-[26px] md:text-[32px] font-editorial font-bold text-white uppercase">
                       Solicitação Recebida com Sucesso!
                     </h3>
-                    <p className="text-sm text-white/80 font-sans-clean max-w-md mx-auto leading-relaxed">
+                    <p className="text-[15px] text-white/80 font-sans-clean max-w-md mx-auto leading-relaxed">
                       Obrigado, <strong className="text-[#E8C991]">{partnerForm.name}</strong>. Nossa equipe comercial entrará em contato via WhatsApp/telefone em breve com as condições para <strong className="text-white">{partnerForm.company}</strong>.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
-                      className="mt-6 px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-sans-clean text-white uppercase tracking-wider transition-all cursor-pointer"
+                      className="mt-6 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-[13px] font-sans-clean text-white uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap"
                     >
-                      Enviar outra solicitação
+                      <span className="whitespace-nowrap">Enviar outra solicitação</span>
                     </button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
+                        <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
                           Seu Nome Completo *
                         </label>
                         <input
@@ -191,12 +191,12 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                           value={partnerForm.name}
                           onChange={(e) => setPartnerForm({ ...partnerForm, name: e.target.value })}
                           placeholder="Ex: Carlos Mendes"
-                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-xs font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
+                        <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
                           Nome da Empresa / Fantasia *
                         </label>
                         <input
@@ -205,20 +205,20 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                           value={partnerForm.company}
                           onChange={(e) => setPartnerForm({ ...partnerForm, company: e.target.value })}
                           placeholder="Ex: Comercial Alimentos Ltda."
-                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-xs font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
+                        <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
                           Segmento do Negócio *
                         </label>
                         <select
                           value={partnerForm.segment}
                           onChange={(e) => setPartnerForm({ ...partnerForm, segment: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white text-xs font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
                         >
                           <option value="Distribuidora">Distribuidora</option>
                           <option value="Rede de Supermercados">Rede de Supermercados</option>
@@ -232,7 +232,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                       </div>
 
                       <div>
-                        <label className="block text-xs uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
+                        <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
                           Cidade e UF *
                         </label>
                         <input
@@ -241,14 +241,14 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                           value={partnerForm.cityState}
                           onChange={(e) => setPartnerForm({ ...partnerForm, cityState: e.target.value })}
                           placeholder="Ex: Campinas — SP"
-                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-xs font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
+                        <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
                           WhatsApp Comercial *
                         </label>
                         <input
@@ -257,12 +257,12 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                           value={partnerForm.whatsapp}
                           onChange={(e) => setPartnerForm({ ...partnerForm, whatsapp: e.target.value })}
                           placeholder="(11) 99999-9999"
-                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-xs font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
+                        <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
                           E-mail Corporativo *
                         </label>
                         <input
@@ -271,13 +271,13 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                           value={partnerForm.email}
                           onChange={(e) => setPartnerForm({ ...partnerForm, email: e.target.value })}
                           placeholder="compras@suaempresa.com.br"
-                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-xs font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
+                      <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
                         Mensagem / Volume Previsto (Opcional)
                       </label>
                       <textarea
@@ -285,16 +285,16 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                         value={partnerForm.message}
                         onChange={(e) => setPartnerForm({ ...partnerForm, message: e.target.value })}
                         placeholder="Conte-nos sobre a sua operação, cidades atendidas ou produtos de interesse..."
-                        className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-xs font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors resize-none"
+                        className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2.5 transition-all shadow-[0_4px_25px_rgba(232,201,145,0.3)] cursor-pointer mt-2"
+                      className="w-full py-4 px-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all shadow-[0_4px_25px_rgba(232,201,145,0.3)] cursor-pointer mt-2 whitespace-nowrap"
                     >
-                      <PhoneCall className="w-4 h-4" />
-                      <span>SOLICITAR CONTATO COMERCIAL</span>
+                      <PhoneCall className="w-4 h-4 shrink-0" />
+                      <span className="whitespace-nowrap">SOLICITAR CONTATO COMERCIAL</span>
                     </button>
                   </form>
                 )}

@@ -97,7 +97,7 @@ export const ValuesSection: React.FC<ValuesSectionProps> = ({ onOpenModal }) => 
       className="relative w-full text-[#F4EEE7] overflow-hidden bg-[#0A0504] border-t border-white/10 py-16 sm:py-20 lg:py-24"
     >
       {/* Main Container */}
-      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px]">
+      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px]">
         
         {/* Section Eyebrow */}
         <div
@@ -281,13 +281,13 @@ export const ValuesSection: React.FC<ValuesSectionProps> = ({ onOpenModal }) => 
             <h4 className="font-editorial font-bold text-[20px] sm:text-[22px] text-white">
               Quer fazer parte desta história de parceria e crescimento?
             </h4>
-            <p className="font-sans-clean text-[13px] sm:text-[14px] text-white/60 mt-1">
+            <p className="font-sans-clean text-[14px] sm:text-[15px] text-white/60 mt-1">
               Converse com nossa equipe comercial e conheça as condições para distribuidores e lojistas.
             </p>
           </div>
           <button
             onClick={() => onOpenModal('contact')}
-            className="w-full sm:w-auto shrink-0 h-[48px] sm:h-[52px] px-4 sm:px-8 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[12px] xs:text-[13px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer whitespace-nowrap"
+            className="w-full sm:w-auto shrink-0 h-[48px] sm:h-[52px] px-5 sm:px-8 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer whitespace-nowrap"
           >
             <span className="whitespace-nowrap">Falar com o Comercial</span>
             <ArrowRight className="w-4 h-4 shrink-0" />

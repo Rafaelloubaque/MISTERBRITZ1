@@ -7,7 +7,7 @@ import {
   ChefHat, 
   ArrowRight, 
   Award, 
-  TrendingUp, 
+  BadgePercent, 
   Repeat, 
   Headphones, 
   Maximize2, 
@@ -92,7 +92,7 @@ export const ChannelsSection: React.FC<ChannelsSectionProps> = ({
     {
       title: 'Competitividade',
       description: 'Estratégias comerciais adequadas aos diferentes canais de venda.',
-      icon: TrendingUp,
+      icon: BadgePercent,
       badge: '02',
     },
     {
@@ -127,7 +127,7 @@ export const ChannelsSection: React.FC<ChannelsSectionProps> = ({
       {/* =========================================================
           PARTE 1: PARA QUEM VENDEMOS
           ========================================================= */}
-      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px]">
+      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px]">
         {/* Section Header */}
         <div className="mb-14 sm:mb-16">
           <div className="flex items-center gap-3 mb-3">
@@ -187,7 +187,7 @@ export const ChannelsSection: React.FC<ChannelsSectionProps> = ({
                 <div className="mt-8 pt-5 border-t border-white/10">
                   <button
                     onClick={() => handleChannelAction(channel.title)}
-                    className={`w-full py-3 px-3 sm:px-4 rounded-xl text-[11px] xs:text-xs font-semibold uppercase tracking-wider font-sans-clean flex items-center justify-center gap-2 transition-all cursor-pointer whitespace-nowrap ${
+                    className={`w-full py-3.5 px-4 rounded-xl text-[13px] md:text-[14px] font-semibold uppercase tracking-wider font-sans-clean flex items-center justify-center gap-2 transition-all cursor-pointer whitespace-nowrap ${
                       channel.primary
                         ? 'bg-[#E8C991] hover:bg-[#d6b478] text-[#190B08] font-bold shadow-md'
                         : 'bg-[#25100B] hover:bg-[#301610] text-[#E8C991] border border-[#E8C991]/30 hover:border-[#E8C991]'

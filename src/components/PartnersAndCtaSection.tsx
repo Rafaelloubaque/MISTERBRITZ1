@@ -16,7 +16,7 @@ import {
   PackageCheck, 
   Calendar, 
   MapPin, 
-  TrendingUp, 
+  BadgePercent, 
   ShieldCheck 
 } from 'lucide-react';
 import { ActiveModal } from '../types';
@@ -44,7 +44,7 @@ export const PartnersAndCtaSection: React.FC<PartnersAndCtaSectionProps> = ({
   const commercialBenefits = [
     { label: 'Catálogo completo de produtos', icon: FileText },
     { label: 'Tabela comercial atualizada', icon: FileSpreadsheet },
-    { label: 'Condições especiais para atacado', icon: TrendingUp },
+    { label: 'Condições especiais para atacado', icon: BadgePercent },
     { label: 'Política transparente para distribuidores', icon: ShieldCheck },
     { label: 'Pedido mínimo acessível', icon: PackageCheck },
     { label: 'Prazos de atendimento ágeis', icon: Calendar },
@@ -68,7 +68,7 @@ export const PartnersAndCtaSection: React.FC<PartnersAndCtaSectionProps> = ({
 
   return (
     <section id="parceiros" className="relative w-full bg-[#120603] text-[#F7F1E8] py-16 sm:py-20 lg:py-24 border-t border-white/10 overflow-hidden">
-      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px] space-y-24">
+      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px] space-y-24">
         
         {/* =========================================================
             PARTE 1: SEÇÃO PARCEIROS
@@ -138,7 +138,7 @@ export const PartnersAndCtaSection: React.FC<PartnersAndCtaSectionProps> = ({
 
               <button
                 onClick={handleOpenPartner}
-                className="w-full sm:w-auto px-4 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[11px] xs:text-xs uppercase tracking-wider sm:tracking-widest flex items-center justify-center gap-2.5 sm:gap-3 transition-all shadow-[0_4px_20px_rgba(232,201,145,0.25)] cursor-pointer whitespace-nowrap"
+                className="w-full sm:w-auto px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all shadow-[0_4px_20px_rgba(232,201,145,0.25)] cursor-pointer whitespace-nowrap"
               >
                 <span className="whitespace-nowrap">QUERO SER PARCEIRO</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
@@ -208,7 +208,7 @@ export const PartnersAndCtaSection: React.FC<PartnersAndCtaSectionProps> = ({
 
               <button
                 onClick={handleOpenCommercial}
-                className="w-full md:w-auto px-4 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[11px] xs:text-xs uppercase tracking-wider sm:tracking-widest flex items-center justify-center gap-2.5 sm:gap-3 transition-all shadow-[0_4px_25px_rgba(232,201,145,0.3)] cursor-pointer whitespace-nowrap"
+                className="w-full md:w-auto px-5 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all shadow-[0_4px_25px_rgba(232,201,145,0.3)] cursor-pointer whitespace-nowrap"
               >
                 <PhoneCall className="w-4 h-4 text-[#190B08] shrink-0" />
                 <span className="whitespace-nowrap">FALAR COM O COMERCIAL</span>

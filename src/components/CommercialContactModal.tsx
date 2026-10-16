@@ -46,7 +46,7 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div
         className="relative w-full max-w-3xl bg-[#120805] border border-[#E8C991]/30 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.95)] flex flex-col max-h-[92vh]"
         role="dialog"
@@ -132,10 +132,10 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
                 <button
                   type="button"
                   onClick={handleWhatsAppDirect}
-                  className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0A2612] font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-all shadow-[0_4px_16px_rgba(37,211,102,0.3)] cursor-pointer"
+                  className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0A2612] font-semibold text-[13px] md:text-[14px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all shadow-[0_4px_16px_rgba(37,211,102,0.3)] cursor-pointer whitespace-nowrap"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Conversar Direto no WhatsApp</span>
+                  <MessageCircle className="w-4 h-4 shrink-0" />
+                  <span className="whitespace-nowrap">Conversar no WhatsApp</span>
                 </button>
               </div>
 
@@ -248,10 +248,10 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#8D1422] to-[#B81D2E] hover:from-[#A51928] hover:to-[#C82136] text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_4px_20px_rgba(184,29,46,0.35)] cursor-pointer"
+                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#8D1422] to-[#B81D2E] hover:from-[#A51928] hover:to-[#C82136] text-white font-semibold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_4px_20px_rgba(184,29,46,0.35)] cursor-pointer whitespace-nowrap"
                 >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>{isSubmitting ? 'Enviando Proposta...' : 'Enviar Solicitação Comercial'}</span>
+                  <Send className="w-3.5 h-3.5 shrink-0" />
+                  <span className="whitespace-nowrap">{isSubmitting ? 'Enviando...' : 'Enviar Solicitação Comercial'}</span>
                 </button>
               </form>
             </div>

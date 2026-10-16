@@ -95,7 +95,7 @@ export const ProductsModal: React.FC<ProductsModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div
         className="relative w-full max-w-5xl max-h-[90vh] bg-[#120805] border border-[#E8C991]/30 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.95)] flex flex-col"
         role="dialog"
@@ -217,10 +217,10 @@ export const ProductsModal: React.FC<ProductsModalProps> = ({
                     onClose();
                     if (onContactProduct) onContactProduct(product.name);
                   }}
-                  className="w-full py-2.5 px-3 rounded-xl bg-[#B81D2E] hover:bg-[#8D1422] text-white text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer"
+                  className="w-full py-3 px-3 rounded-xl bg-[#B81D2E] hover:bg-[#8D1422] text-white text-[13px] font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer whitespace-nowrap"
                 >
-                  <span>Solicitar Cotação B2B</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span className="whitespace-nowrap">Solicitar Cotação B2B</span>
+                  <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </button>
               </div>
             </div>

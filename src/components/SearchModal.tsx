@@ -32,7 +32,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
     : SEARCHABLE_ITEMS.slice(0, 5);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-6 pt-20 sm:pt-24 bg-black/85 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-[120] flex items-start justify-center p-4 sm:p-6 pt-20 sm:pt-24 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div
         className="relative w-full max-w-2xl bg-[#120805] border border-[#E8C991]/30 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.95)] flex flex-col"
         role="dialog"

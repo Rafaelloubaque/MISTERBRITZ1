@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Gem, Handshake, TrendingUp } from 'lucide-react';
+import { Gem, Handshake, ArrowUpRight } from 'lucide-react';
 import ImageCube from './ImageCube';
 
 export const InstitutionalSection: React.FC = () => {
@@ -42,7 +42,7 @@ export const InstitutionalSection: React.FC = () => {
     >
       {/* Main Container - Aligned with Hero width and margins */}
       <div
-        className="relative z-10 w-full h-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px] py-10 sm:py-12 lg:py-14 flex flex-col justify-between gap-8 sm:gap-10 lg:gap-0"
+        className="relative z-10 w-full h-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px] py-10 sm:py-12 lg:py-14 flex flex-col justify-between gap-8 sm:gap-10 lg:gap-0"
       >
         
         {/* ==================================================
@@ -231,13 +231,13 @@ export const InstitutionalSection: React.FC = () => {
               {/* 3. Crescimento */}
               <div className="flex items-center gap-2.5 sm:gap-3">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#B81D2E]/20 border border-[#B81D2E]/50 flex items-center justify-center text-[#E8C991] shrink-0">
-                  <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[1.8]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2]" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-sans-clean text-[10px] sm:text-[11px] font-bold uppercase tracking-[1.2px] sm:tracking-[1.5px] text-white leading-tight">
+                  <span className="font-sans-clean text-[13px] font-bold uppercase tracking-[1.2px] sm:tracking-[1.5px] text-white leading-tight">
                     CRESCIMENTO
                   </span>
-                  <span className="font-sans-clean text-[8.5px] sm:text-[9px] font-medium uppercase tracking-[1px] sm:tracking-[1.2px] text-white/60 leading-tight">
+                  <span className="font-sans-clean text-[13px] font-medium uppercase tracking-[1px] sm:tracking-[1.2px] text-white/60 leading-tight">
                     COMPARTILHADO
                   </span>
                 </div>

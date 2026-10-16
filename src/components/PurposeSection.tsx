@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { 
   ShieldCheck, 
   Repeat, 
-  TrendingUp, 
+  BadgePercent, 
   Layers, 
   ArrowRight, 
   Quote, 
@@ -69,7 +69,7 @@ export const PurposeSection: React.FC<PurposeSectionProps> = ({ onOpenModal }) =
       title: 'Competitividade para o distribuidor',
       description:
         'Margens atrativas, estabilidade de fornecimento e condições comerciais sólidas para expandir rotas de distribuição com segurança.',
-      icon: TrendingUp,
+      icon: BadgePercent,
     },
     {
       num: '04',
@@ -88,7 +88,7 @@ export const PurposeSection: React.FC<PurposeSectionProps> = ({ onOpenModal }) =
       className="relative w-full text-[#F4EEE7] overflow-hidden bg-black border-t border-white/10 py-16 sm:py-20 lg:py-24"
     >
       {/* Main Container - Synchronized with layout grid */}
-      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px]">
+      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px]">
         
         {/* Top Header Eyebrow */}
         <div
@@ -222,14 +222,14 @@ export const PurposeSection: React.FC<PurposeSectionProps> = ({ onOpenModal }) =
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full lg:w-auto shrink-0">
               <button
                 onClick={() => onOpenModal('contact')}
-                className="h-[52px] sm:h-[58px] px-4 sm:px-7 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[12px] xs:text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer whitespace-nowrap"
+                className="h-[52px] sm:h-[58px] px-5 sm:px-7 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer whitespace-nowrap"
               >
                 <span className="whitespace-nowrap">Fale Conosco</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
               <button
                 onClick={() => onOpenModal('products')}
-                className="h-[52px] sm:h-[58px] px-4 sm:px-6 rounded-full bg-white/5 border border-white/20 text-[#F4EEE7] font-sans-clean text-[12px] xs:text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/40 transition-all duration-300 active:scale-[0.99] cursor-pointer whitespace-nowrap"
+                className="h-[52px] sm:h-[58px] px-5 sm:px-6 rounded-full bg-white/5 border border-white/20 text-[#F4EEE7] font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/40 transition-all duration-300 active:scale-[0.99] cursor-pointer whitespace-nowrap"
               >
                 <span className="whitespace-nowrap">Ver Produtos</span>
               </button>

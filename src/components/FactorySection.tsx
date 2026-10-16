@@ -4,14 +4,14 @@ import {
   Package, 
   Sliders, 
   CheckCircle2, 
-  FlaskConical, 
   Building2, 
   Truck, 
   ArrowRight,
   Briefcase,
   Layers,
-  TrendingUp,
-  Boxes
+  Boxes,
+  PackagePlus,
+  PackageCheck
 } from 'lucide-react';
 import logoSmall from '../assets/logo3.png';
 import { ActiveModal } from '../types';
@@ -49,7 +49,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
   });
 
   const futurePillars = [
-    { title: 'Novos produtos', desc: 'Pesquisa contínua e ampliação de portfólio', icon: FlaskConical },
+    { title: 'Novos produtos', desc: 'Pesquisa contínua e ampliação de portfólio', icon: PackagePlus },
     { title: 'Novos formatos', desc: 'Embalagens sob medida para o varejo e atacado', icon: Boxes },
     { title: 'Novas categorias', desc: 'Expansão estratégica no mercado de alimentos', icon: Layers },
     { title: 'Novas oportunidades', desc: 'Soluções sob medida para distribuidores e redes', icon: Briefcase },
@@ -83,8 +83,8 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
     {
       num: '05',
       title: 'Desenvolvimento de novos produtos',
-      desc: 'P&D ágil para formulação de condimentos, temperos e misturas alinhadas às tendências de consumo.',
-      icon: FlaskConical,
+      desc: 'P&D especializado para formulação de condimentos, temperos e misturas alinhadas às demandas de consumo.',
+      icon: PackageCheck,
     },
     {
       num: '06',
@@ -106,21 +106,21 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
       ref={sectionRef}
       className="relative w-full text-[#F4EEE7] overflow-hidden bg-[#070302] border-t border-white/10 py-16 sm:py-20 lg:py-24"
     >
-      {/* Container Principal */}
-      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-5 sm:px-10 md:px-16 lg:px-[240px]">
+      {/* Container Principal com padding mobile-first px-[25px] */}
+      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px]">
         {/* ==================================================
             1. CABEÇALHO DA SEÇÃO
             ================================================== */}
         <div style={getStaggerStyle(0)} className="mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#E8C991]/30 bg-[#160A08] text-[#E8C991] text-[11px] font-sans-clean font-semibold tracking-[3px] uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#E8C991]/30 bg-[#160A08] text-[#E8C991] text-[13px] font-sans-clean font-semibold tracking-[3px] uppercase mb-4">
             <Factory className="w-3.5 h-3.5" />
             <span>ESTRUTURA & OPERAÇÃO INDUSTRIAL</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans-clean font-extrabold tracking-tight uppercase text-white mb-3">
+          <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-sans-clean font-extrabold tracking-tight uppercase text-white mb-3">
             NOSSA FÁBRICA
           </h2>
-          <p className="text-xl sm:text-2xl md:text-3xl font-serif italic text-[#E8C991]">
+          <p className="text-[20px] sm:text-2xl md:text-3xl font-serif italic text-[#E8C991]">
             Onde qualidade encontra escala.
           </p>
         </div>
@@ -141,12 +141,12 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
                   alt="Mister Britz"
                   className="w-8 h-8 object-contain opacity-90"
                 />
-                <span className="text-xs font-sans-clean font-bold tracking-[2.5px] uppercase text-[#E8C991]">
+                <span className="text-[13px] font-sans-clean font-bold tracking-[2.5px] uppercase text-[#E8C991]">
                   Padrão Produtivo Mister Britz
                 </span>
               </div>
 
-              <div className="space-y-4 text-base sm:text-lg text-[#F4EEE7]/85 font-sans-clean leading-relaxed">
+              <div className="space-y-4 text-[15px] md:text-[16px] text-[#F4EEE7]/85 font-sans-clean leading-relaxed">
                 <p>
                   Nossa operação produtiva foi pensada para unir{' '}
                   <strong className="text-white font-semibold">padronização, eficiência e capacidade de expansão</strong>.
@@ -161,10 +161,10 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-              <span className="text-xs uppercase tracking-[2px] text-[#F4EEE7]/60 font-sans-clean">
+              <span className="text-[13px] uppercase tracking-[2px] text-[#F4EEE7]/60 font-sans-clean">
                 Operação Segura • Rastreabilidade • Escala
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs text-[#E8C991] font-semibold tracking-wider uppercase">
+              <span className="inline-flex items-center gap-1.5 text-[13px] text-[#E8C991] font-semibold tracking-wider uppercase">
                 <CheckCircle2 className="w-4 h-4 text-[#E8C991]" />
                 100% Inspecionado
               </span>
@@ -177,19 +177,19 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
             className="lg:col-span-5 p-6 sm:p-8 md:p-10 rounded-2xl bg-[#140806] border border-white/10 flex flex-col justify-between"
           >
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#220B09] border border-[#E8C991]/20 text-[#E8C991] text-xs font-sans-clean font-semibold tracking-[2px] uppercase mb-4">
-                <TrendingUp className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#220B09] border border-[#E8C991]/20 text-[#E8C991] text-[13px] font-sans-clean font-semibold tracking-[2px] uppercase mb-4">
+                <Building2 className="w-3.5 h-3.5" />
                 <span>EXPANSÃO CONTÍNUA</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-sans-clean font-bold text-white mb-2 leading-tight">
+              <h3 className="text-[22px] sm:text-2xl md:text-3xl font-sans-clean font-bold text-white mb-2 leading-tight">
                 Uma estrutura preparada para crescer.
               </h3>
-              <p className="text-sm text-[#F4EEE7]/70 font-sans-clean mb-6">
+              <p className="text-[15px] text-[#F4EEE7]/70 font-sans-clean mb-6">
                 Projetada modularmente para acompanhar o ritmo acelerado de crescimento dos nossos parceiros comerciais.
               </p>
 
-              {/* 4 Blocos de Futuro */}
+              {/* 4 Blocos de Futuro com ícones profissionais */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {futurePillars.map((item, idx) => {
                   const Icon = item.icon;
@@ -202,11 +202,11 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
                         <span className="w-7 h-7 rounded-lg bg-[#220B09] border border-white/10 flex items-center justify-center text-[#E8C991] shrink-0">
                           <Icon className="w-3.5 h-3.5" />
                         </span>
-                        <h4 className="text-sm font-sans-clean font-bold text-white tracking-wide">
+                        <h4 className="text-[14px] font-sans-clean font-bold text-white tracking-wide">
                           {item.title}
                         </h4>
                       </div>
-                      <p className="text-[11px] text-[#F4EEE7]/60 font-sans-clean leading-snug pl-9">
+                      <p className="text-[13px] text-[#F4EEE7]/60 font-sans-clean leading-snug pl-9">
                         {item.desc}
                       </p>
                     </div>
@@ -216,7 +216,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
             </div>
 
             <div className="mt-6 pt-5 border-t border-white/10">
-              <p className="text-xs text-[#E8C991]/90 font-sans-clean italic">
+              <p className="text-[13px] text-[#E8C991]/90 font-sans-clean italic">
                 “Capacidade instalada e flexibilidade de produção para atender demandas sazonais e contratos de alta escala.”
               </p>
             </div>
@@ -229,14 +229,14 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
         <div style={getStaggerStyle(300)} className="mb-14 sm:mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
             <div>
-              <span className="text-xs font-sans-clean font-bold tracking-[3px] uppercase text-[#E8C991] block mb-1">
+              <span className="text-[13px] font-sans-clean font-bold tracking-[3px] uppercase text-[#E8C991] block mb-1">
                 ETAPAS & CAPACIDADE TÉCNICA
               </span>
-              <h3 className="text-2xl sm:text-3xl font-sans-clean font-bold text-white tracking-tight uppercase">
+              <h3 className="text-[26px] md:text-[32px] font-sans-clean font-bold text-white tracking-tight uppercase">
                 Capacidades Operacionais
               </h3>
             </div>
-            <p className="text-sm text-[#F4EEE7]/70 max-w-md font-sans-clean">
+            <p className="text-[15px] text-[#F4EEE7]/70 max-w-md font-sans-clean">
               Do planejamento de insumos à expedição final, cada etapa é desenhada para eficiência máxima e pontualidade.
             </p>
           </div>
@@ -245,7 +245,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
             {operations.map((op, idx) => {
               const Icon = op.icon;
-              const isHighlight = idx === 6; // last card spans 2 columns or stands out on larger screens
+              const isHighlight = idx === 6;
               return (
                 <div
                   key={op.num}
@@ -256,7 +256,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
                   <div>
                     {/* Top row: Number badge & Icon */}
                     <div className="flex items-center justify-between mb-5">
-                      <span className="text-xs font-sans-clean font-bold tracking-[2px] px-2.5 py-1 rounded-md bg-[#1F0A08] border border-white/10 text-[#E8C991]">
+                      <span className="text-[13px] font-sans-clean font-bold tracking-[2px] px-2.5 py-1 rounded-md bg-[#1F0A08] border border-white/10 text-[#E8C991]">
                         {op.num}
                       </span>
                       <div className="w-10 h-10 rounded-xl bg-[#1F0A08] border border-white/10 flex items-center justify-center text-[#E8C991] group-hover:border-[#E8C991]/40 group-hover:scale-105 transition-all">
@@ -265,19 +265,19 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-lg font-sans-clean font-bold text-white mb-2 leading-snug group-hover:text-[#E8C991] transition-colors">
+                    <h4 className="text-[17px] sm:text-lg font-sans-clean font-bold text-white mb-2 leading-snug group-hover:text-[#E8C991] transition-colors">
                       {op.title}
                     </h4>
 
                     {/* Description */}
-                    <p className="text-sm font-sans-clean text-[#F4EEE7]/70 leading-relaxed">
+                    <p className="text-[15px] font-sans-clean text-[#F4EEE7]/70 leading-relaxed">
                       {op.desc}
                     </p>
                   </div>
 
                   {/* Bottom indicator */}
-                  <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-[#F4EEE7]/40 group-hover:text-[#E8C991] transition-colors">
-                    <span className="tracking-wider uppercase text-[10px]">Mister Britz Indústria</span>
+                  <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between text-[13px] text-[#F4EEE7]/40 group-hover:text-[#E8C991] transition-colors">
+                    <span className="tracking-wider uppercase text-[13px]">Mister Britz Indústria</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -291,7 +291,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
             ================================================== */}
         <div
           style={getStaggerStyle(420)}
-          className="relative rounded-2xl bg-[#140806] border border-white/10 p-8 sm:p-10 md:p-12 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8"
+          className="relative rounded-2xl bg-[#140806] border border-white/10 p-6 sm:p-10 md:p-12 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8"
         >
           {/* Subtle Watermark Logo on corner */}
           <img
@@ -301,13 +301,13 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
           />
 
           <div className="relative z-10 max-w-2xl text-center lg:text-left">
-            <span className="inline-block text-xs font-sans-clean font-bold tracking-[3px] uppercase text-[#E8C991] mb-2">
+            <span className="inline-block text-[13px] font-sans-clean font-bold tracking-[3px] uppercase text-[#E8C991] mb-2">
               OPERAÇÃO B2B • AGENDAMENTO TÉCNICO
             </span>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-sans-clean font-extrabold text-white tracking-tight uppercase mb-3">
+            <h3 className="text-[26px] sm:text-3xl md:text-4xl font-sans-clean font-extrabold text-white tracking-tight uppercase mb-3">
               Pronto para abastecer sua rede com padrão industrial?
             </h3>
-            <p className="text-sm sm:text-base text-[#F4EEE7]/80 font-sans-clean leading-relaxed">
+            <p className="text-[15px] sm:text-base text-[#F4EEE7]/80 font-sans-clean leading-relaxed">
               Receba distribuidores, representantes e redes atacadistas em nossa unidade produtiva ou converse diretamente com nossa equipe de operações e novos produtos.
             </p>
           </div>
@@ -315,7 +315,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
           <div className="relative z-10 shrink-0 w-full sm:w-auto">
             <button
               onClick={() => onOpenModal('contact')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 px-4 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#921D2B] hover:bg-[#A82434] active:bg-[#7D1924] text-white text-[12px] xs:text-[13px] sm:text-base font-sans-clean font-bold uppercase tracking-wider sm:tracking-[2px] shadow-lg shadow-black/50 border border-white/10 transition-all duration-200 cursor-pointer group whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#921D2B] hover:bg-[#A82434] active:bg-[#7D1924] text-white text-[13px] sm:text-[14px] font-sans-clean font-bold uppercase tracking-wider sm:tracking-[2px] shadow-lg shadow-black/50 border border-white/10 transition-all duration-200 cursor-pointer group whitespace-nowrap"
             >
               <span className="whitespace-nowrap">CONHEÇA NOSSA ESTRUTURA</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform shrink-0" />

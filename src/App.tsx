@@ -109,7 +109,7 @@ export default function App() {
             <HeroVisuals mousePos={mousePos} />
 
             {/* Main Content */}
-            <div className="relative z-30 w-full flex flex-col justify-center px-5 sm:px-10 md:px-16 lg:px-[240px] pt-[108px] sm:pt-[120px] pb-16 sm:pb-20 lg:pt-[100px] lg:pb-0 my-auto pointer-events-none">
+            <div className="relative z-30 w-full flex flex-col justify-center px-[25px] md:px-8 lg:px-[240px] pt-[108px] sm:pt-[120px] pb-16 sm:pb-20 lg:pt-[100px] lg:pb-0 my-auto pointer-events-none">
               <div className="w-full max-w-[1920px] mx-auto">
                 <HeroContent
                   onOpenModal={(modal) => {
@@ -126,7 +126,7 @@ export default function App() {
                 onClick={() =>
                   document.getElementById('institucional')?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="flex flex-col items-center gap-1.5 text-[11px] font-sans-clean font-medium tracking-[3px] uppercase text-[#F4EEE7]/80 hover:text-[#E8C991] transition-all cursor-pointer group"
+                className="flex flex-col items-center gap-1.5 text-[13px] font-sans-clean font-medium tracking-[3px] uppercase text-[#F4EEE7]/80 hover:text-[#E8C991] transition-all cursor-pointer group"
               >
                 <span>Conheça a Mister Britz</span>
                 <span className="w-5 h-5 rounded-full border border-[#E8C991]/30 flex items-center justify-center text-[10px] text-[#E8C991] group-hover:translate-y-1 group-hover:border-[#E8C991] transition-all">
