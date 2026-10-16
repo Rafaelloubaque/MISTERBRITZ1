@@ -8,7 +8,7 @@ import {
   Building2, 
   Truck, 
   ArrowRight,
-  Sparkles,
+  Briefcase,
   Layers,
   TrendingUp,
   Boxes
@@ -52,7 +52,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
     { title: 'Novos produtos', desc: 'Pesquisa contínua e ampliação de portfólio', icon: FlaskConical },
     { title: 'Novos formatos', desc: 'Embalagens sob medida para o varejo e atacado', icon: Boxes },
     { title: 'Novas categorias', desc: 'Expansão estratégica no mercado de alimentos', icon: Layers },
-    { title: 'Novas oportunidades', desc: 'Soluções sob medida para distribuidores e redes', icon: TrendingUp },
+    { title: 'Novas oportunidades', desc: 'Soluções sob medida para distribuidores e redes', icon: Briefcase },
   ];
 
   const operations = [
@@ -178,7 +178,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
           >
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#220B09] border border-[#E8C991]/20 text-[#E8C991] text-xs font-sans-clean font-semibold tracking-[2px] uppercase mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
+                <TrendingUp className="w-3.5 h-3.5" />
                 <span>EXPANSÃO CONTÍNUA</span>
               </div>
 
@@ -312,13 +312,13 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
             </p>
           </div>
 
-          <div className="relative z-10 shrink-0">
+          <div className="relative z-10 shrink-0 w-full sm:w-auto">
             <button
               onClick={() => onOpenModal('contact')}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#921D2B] hover:bg-[#A82434] active:bg-[#7D1924] text-white text-sm sm:text-base font-sans-clean font-bold uppercase tracking-[2px] shadow-lg shadow-black/50 border border-white/10 transition-all duration-200 cursor-pointer group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 px-4 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#921D2B] hover:bg-[#A82434] active:bg-[#7D1924] text-white text-[12px] xs:text-[13px] sm:text-base font-sans-clean font-bold uppercase tracking-wider sm:tracking-[2px] shadow-lg shadow-black/50 border border-white/10 transition-all duration-200 cursor-pointer group whitespace-nowrap"
             >
-              <span>CONHEÇA NOSSA ESTRUTURA</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span className="whitespace-nowrap">CONHEÇA NOSSA ESTRUTURA</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform shrink-0" />
             </button>
           </div>
         </div>

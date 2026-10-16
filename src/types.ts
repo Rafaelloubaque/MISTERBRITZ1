@@ -9,4 +9,6 @@ export interface ProductItem {
   image?: string;
 }
 
-export type ActiveModal = 'none' | 'products' | 'contact' | 'clientArea' | 'search';
+export type ActiveModal = 'none' | 'products' | 'contact' | 'search';
+
+export type PageRoute = 'home' | 'fabrica' | 'qualidade' | 'esg' | 'produtos' | 'parceiros' | 'contato';

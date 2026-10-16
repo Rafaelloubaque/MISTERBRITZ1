@@ -40,9 +40,9 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
 
   const handleWhatsAppDirect = () => {
     const text = encodeURIComponent(
-      `Olá MR. BRITZ FOODS! Tenho interesse em representação comercial / compras B2B para minha empresa (${formData.empresa || 'Empresa'}) no segmento de ${formData.tipoNegocio}.`
+      `Olá Mister Britz! Tenho interesse em representação comercial / compras B2B para minha empresa (${formData.empresa || 'Empresa'}) no segmento de ${formData.tipoNegocio}.`
     );
-    window.open(`https://wa.me/5511999990000?text=${text}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/551110677878?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -117,15 +117,15 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
                 <div className="bg-[#1C0D08] border border-[#E8C991]/20 rounded-2xl p-4 space-y-3">
                   <div className="flex items-center gap-3 text-xs text-white/90">
                     <Phone className="w-4 h-4 text-[#E8C991] shrink-0" />
-                    <span>0800 591 0000 · (11) 3450-8900</span>
+                    <span>(11) 1067-7878</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-white/90">
                     <Mail className="w-4 h-4 text-[#E8C991] shrink-0" />
-                    <span>comercial@mrbritzfoods.com.br</span>
+                    <span>contato@mrbritz.com</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-white/90">
                     <MapPin className="w-4 h-4 text-[#E8C991] shrink-0" />
-                    <span>Parque Industrial &amp; CD Logístico · SP / BR</span>
+                    <span>São Paulo — SP · CNPJ 54.587.919/0001-52</span>
                   </div>
                 </div>
 

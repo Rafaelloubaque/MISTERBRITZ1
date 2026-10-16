@@ -120,21 +120,21 @@
 }
 
 .cube-wrapper {
-  --cube-size: 260px;
-  --cube-depth: 130px;
+  --cube-size: 210px;
+  --cube-depth: 105px;
 }
 
 @media (min-width: 380px) {
   .cube-wrapper {
-    --cube-size: 300px;
-    --cube-depth: 150px;
+    --cube-size: 250px;
+    --cube-depth: 125px;
   }
 }
 
 @media (min-width: 480px) {
   .cube-wrapper {
-    --cube-size: 340px;
-    --cube-depth: 170px;
+    --cube-size: 320px;
+    --cube-depth: 160px;
   }
 }
 

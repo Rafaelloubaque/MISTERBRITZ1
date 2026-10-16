@@ -48,7 +48,7 @@ export const InstitutionalSection: React.FC = () => {
         {/* ==================================================
             TOP BAR: A MISTER BRITZ (Left) & MAIS SABOR + ALIMENTOS (Right)
             ================================================== */}
-        <div className="w-full flex items-start justify-between -mb-2 sm:-mb-6 lg:-mb-[48px] relative z-10">
+        <div className="w-full flex items-start justify-between -mb-[48px] sm:-mb-6 lg:-mb-[48px] relative z-10">
           {/* Top-Left: A MISTER BRITZ */}
           <div
             style={getStaggerStyle(150)}
@@ -249,7 +249,7 @@ export const InstitutionalSection: React.FC = () => {
           {/* Right Column: 3D Image Cube */}
           <div
             style={getStaggerStyle(420)}
-            className="w-full lg:w-[46%] xl:w-[50%] flex items-center justify-center lg:justify-end shrink-0 py-6 sm:py-8 lg:py-0 overflow-visible"
+            className="w-full lg:w-[46%] xl:w-[50%] flex items-center justify-center lg:justify-end shrink-0 py-6 sm:py-8 lg:py-0 overflow-hidden lg:overflow-visible max-w-full"
           >
             <div className="relative flex items-center justify-center p-2 sm:p-4">
               {/* Subtle ambient backlight glow */}

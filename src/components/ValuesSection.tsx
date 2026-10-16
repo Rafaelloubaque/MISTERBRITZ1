@@ -4,7 +4,7 @@ import {
   Eye, 
   Award, 
   ShieldCheck, 
-  Zap, 
+  Gauge, 
   Lightbulb, 
   Handshake, 
   Scale, 
@@ -65,7 +65,7 @@ export const ValuesSection: React.FC<ValuesSectionProps> = ({ onOpenModal }) => 
       title: 'Eficiência',
       description:
         'Processos pensados para gerar consistência, produtividade e competitividade.',
-      icon: Zap,
+      icon: Gauge,
     },
     {
       num: '04',
@@ -138,7 +138,7 @@ export const ValuesSection: React.FC<ValuesSectionProps> = ({ onOpenModal }) => 
           {/* Card Missão */}
           <div
             style={getStaggerStyle(300)}
-            className="group relative p-7 sm:p-9 lg:p-10 rounded-3xl bg-[#110705] border border-white/10 hover:border-[#C11D31]/60 hover:bg-[#160A08] transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_12px_32px_rgba(0,0,0,0.6)]"
+            className="group relative p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-[#110705] border border-white/10 hover:border-[#C11D31]/60 hover:bg-[#160A08] transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_12px_32px_rgba(0,0,0,0.6)]"
           >
             {/* Watermark Logo Icon */}
             <div className="absolute right-3 -bottom-3 w-32 h-32 opacity-[0.04] pointer-events-none select-none transition-opacity duration-300 group-hover:opacity-[0.08]">
@@ -177,7 +177,7 @@ export const ValuesSection: React.FC<ValuesSectionProps> = ({ onOpenModal }) => 
           {/* Card Visão */}
           <div
             style={getStaggerStyle(420)}
-            className="group relative p-7 sm:p-9 lg:p-10 rounded-3xl bg-[#110705] border border-white/10 hover:border-[#E8C991]/60 hover:bg-[#160A08] transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_12px_32px_rgba(0,0,0,0.6)]"
+            className="group relative p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-[#110705] border border-white/10 hover:border-[#E8C991]/60 hover:bg-[#160A08] transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_12px_32px_rgba(0,0,0,0.6)]"
           >
             {/* Watermark Logo Icon */}
             <div className="absolute right-3 -bottom-3 w-32 h-32 opacity-[0.04] pointer-events-none select-none transition-opacity duration-300 group-hover:opacity-[0.08]">
@@ -238,7 +238,7 @@ export const ValuesSection: React.FC<ValuesSectionProps> = ({ onOpenModal }) => 
               <div
                 key={val.num}
                 style={getStaggerStyle(600 + idx * 80)}
-                className="group relative p-6 sm:p-7 rounded-2xl bg-[#110705] border border-white/10 hover:border-[#E8C991]/50 hover:bg-[#160A08] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+                className="group relative p-5 sm:p-7 rounded-2xl bg-[#110705] border border-white/10 hover:border-[#E8C991]/50 hover:bg-[#160A08] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
               >
                 <div>
                   {/* Top Bar: Number & Icon */}
@@ -287,10 +287,10 @@ export const ValuesSection: React.FC<ValuesSectionProps> = ({ onOpenModal }) => 
           </div>
           <button
             onClick={() => onOpenModal('contact')}
-            className="shrink-0 h-[48px] sm:h-[52px] px-6 sm:px-8 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[13px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
+            className="w-full sm:w-auto shrink-0 h-[48px] sm:h-[52px] px-4 sm:px-8 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[12px] xs:text-[13px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer whitespace-nowrap"
           >
-            <span>Falar com o Comercial</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="whitespace-nowrap">Falar com o Comercial</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
 

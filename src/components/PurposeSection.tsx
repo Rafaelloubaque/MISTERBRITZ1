@@ -109,7 +109,7 @@ export const PurposeSection: React.FC<PurposeSectionProps> = ({ onOpenModal }) =
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-start mb-12 sm:mb-16 lg:mb-20">
           {/* Main Statement */}
           <div style={getStaggerStyle(240)} className="lg:col-span-8">
-            <h2 className="font-editorial font-bold text-[32px] xs:text-[38px] sm:text-[48px] lg:text-[58px] xl:text-[64px] leading-[1.02] tracking-[-0.8px] sm:tracking-[-1.5px] text-[#F7F1E8]">
+            <h2 className="font-editorial font-bold text-[26px] xs:text-[32px] sm:text-[44px] lg:text-[58px] xl:text-[64px] leading-[1.08] sm:leading-[1.02] tracking-tight sm:tracking-[-1.5px] text-[#F7F1E8]">
               Produtos que fazem sentido para quem{' '}
               <span className="text-[#E8C991] italic font-semibold">compra</span>, para quem{' '}
               <span className="text-[#E8C991] italic font-semibold">vende</span> e para quem{' '}
@@ -133,7 +133,7 @@ export const PurposeSection: React.FC<PurposeSectionProps> = ({ onOpenModal }) =
                   Compromisso Real
                 </span>
               </div>
-              <p className="relative z-10 font-sans-clean text-[15px] sm:text-[17px] leading-[1.6] text-white/85 font-normal">
+              <p className="relative z-10 font-sans-clean text-[14px] sm:text-[17px] leading-[1.6] text-white/85 font-normal">
                 Uma boa marca de alimentos precisa entregar{' '}
                 <strong className="text-white font-semibold">muito mais do que sabor</strong>.
               </p>
@@ -149,7 +149,7 @@ export const PurposeSection: React.FC<PurposeSectionProps> = ({ onOpenModal }) =
               <div
                 key={pillar.num}
                 style={getStaggerStyle(450 + idx * 110)}
-                className="group relative p-6 sm:p-7 rounded-2xl bg-[#110705] border border-white/10 hover:border-[#E8C991]/50 hover:bg-[#160A08] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden"
+                className="group relative p-5 sm:p-7 rounded-2xl bg-[#110705] border border-white/10 hover:border-[#E8C991]/50 hover:bg-[#160A08] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden"
               >
                 <div className="relative z-10">
                   {/* Card Header: Number & Tag */}
@@ -222,16 +222,16 @@ export const PurposeSection: React.FC<PurposeSectionProps> = ({ onOpenModal }) =
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full lg:w-auto shrink-0">
               <button
                 onClick={() => onOpenModal('contact')}
-                className="h-[52px] sm:h-[58px] px-7 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
+                className="h-[52px] sm:h-[58px] px-4 sm:px-7 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[12px] xs:text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer whitespace-nowrap"
               >
-                <span>Fale Conosco</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">Fale Conosco</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
               <button
                 onClick={() => onOpenModal('products')}
-                className="h-[52px] sm:h-[58px] px-6 rounded-full bg-white/5 border border-white/20 text-[#F4EEE7] font-sans-clean text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/40 transition-all duration-300 active:scale-[0.99] cursor-pointer"
+                className="h-[52px] sm:h-[58px] px-4 sm:px-6 rounded-full bg-white/5 border border-white/20 text-[#F4EEE7] font-sans-clean text-[12px] xs:text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/40 transition-all duration-300 active:scale-[0.99] cursor-pointer whitespace-nowrap"
               >
-                <span>Ver Produtos</span>
+                <span className="whitespace-nowrap">Ver Produtos</span>
               </button>
             </div>
           </div>

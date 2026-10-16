@@ -169,20 +169,21 @@ export const ProductsModal: React.FC<ProductsModalProps> = ({
             >
               <div>
                 {product.image ? (
-                  <div className="h-40 w-full rounded-xl overflow-hidden mb-4 bg-black/40 border border-white/5 relative">
+                  <div className="aspect-square w-full rounded-xl overflow-hidden mb-4 bg-black/40 border border-white/10 relative">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                     {product.badge && (
-                      <span className="absolute top-2 right-2 px-2.5 py-0.5 rounded-full bg-[#B81D2E] text-white text-[10px] font-semibold tracking-wider uppercase">
+                      <span className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-[#B81D2E] text-white text-[10px] font-semibold tracking-wider uppercase shadow-md">
                         {product.badge}
                       </span>
                     )}
                   </div>
                 ) : (
-                  <div className="h-28 w-full rounded-xl mb-4 bg-[#1C0C08] border border-white/5 flex items-center justify-center relative">
+                  <div className="h-44 w-full rounded-xl mb-4 bg-[#1C0C08] border border-white/5 flex items-center justify-center relative">
                     <Package className="w-10 h-10 text-[#E8C991]/40" />
                     {product.badge && (
                       <span className="absolute top-2 right-2 px-2.5 py-0.5 rounded-full bg-[#B81D2E] text-white text-[10px] font-semibold tracking-wider uppercase">
