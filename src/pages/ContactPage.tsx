@@ -8,10 +8,13 @@ import {
   Clock,
   Send,
   CheckCircle2,
+  Facebook,
+  ShieldCheck
 } from 'lucide-react';
 import { PageTopHero } from '../components/PageTopHero';
 import { HERO_BACKGROUNDS } from '../assets/heroBackgrounds';
 import { ActiveModal, PageRoute } from '../types';
+import { COMPANY_INFO } from '../data/productsData';
 
 interface ContactPageProps {
   onNavigate: (page: PageRoute) => void;
@@ -34,14 +37,27 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const parts = [
+      `*NOVO CONTATO - MISTER BRITZ*`,
+      `----------------------------------------`,
+      `*Nome:* ${form.name}`,
+      `*E-mail:* ${form.email}`,
+      `*Telefone / WhatsApp:* ${form.phone}`,
+      `*Assunto:* ${form.subject}`,
+      `*Mensagem:* ${form.message}`,
+      `----------------------------------------`,
+      `_Enviado pelo formulário de contato do site Mister Britz_`,
+    ];
+    const text = encodeURIComponent(parts.join('\n'));
+    window.open(`https://wa.me/55${COMPANY_INFO.phoneRaw}?text=${text}`, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
   };
 
   const handleWhatsApp = () => {
     const text = encodeURIComponent(
-      'Olá! Gostaria de falar com o time comercial da Mister Britz.'
+      `Olá! Gostaria de falar com o time comercial da ${COMPANY_INFO.brand} (${COMPANY_INFO.corporateName}).`
     );
-    window.open(`https://wa.me/551110677878?text=${text}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/55${COMPANY_INFO.phoneRaw}?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
   const faqs = [
@@ -71,7 +87,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
         customBgUrl={HERO_BACKGROUNDS.contato}
         mousePos={mousePos}
         breadcrumbLabel="Contato"
-        eyebrowBadge="CANAIS DE ATENDIMENTO"
+        eyebrowBadge="CANAIS DE ATENDIMENTO OFICIAIS"
         badgeIcon={<Phone className="w-4 h-4" />}
         titleLines={[
           'Atendimento direto.',
@@ -79,7 +95,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           'Conte com a Mister Britz.',
         ]}
         subtitle="Comunicação ágil e suporte consultivo para a sua empresa."
-        description="Mister Britz Distribuidora de Alimentos Ltda. Estamos à disposição para apresentar nosso portfólio, tirar dúvidas técnicas e estruturar parcerias comerciais de longo prazo."
+        description={`${COMPANY_INFO.corporateName} Estamos à disposição para apresentar nosso portfólio oficial de condimentos, especiarias e ervas, esclarecer dúvidas técnicas e estruturar parcerias comerciais de longo prazo.`}
         primaryCta={{
           label: 'WhatsApp Comercial',
           action: handleWhatsApp,
@@ -96,53 +112,52 @@ export const ContactPage: React.FC<ContactPageProps> = ({
         floatingCards={[
           {
             title: 'Telefone Corporativo',
-            value: '(11) 1067-7878',
+            value: COMPANY_INFO.phone,
             subtitle: 'Atendimento comercial de Segunda a Sexta · 08h às 18h',
             icon: <Phone className="w-4 h-4" />,
           },
           {
-            title: 'E-mail Comercial',
-            value: 'contato@mrbritz.com',
-            subtitle: 'Retorno prioritário em até 2 horas úteis',
+            title: 'E-mail Oficial',
+            value: COMPANY_INFO.email,
+            subtitle: 'Retorno ágil em até 2 horas úteis',
             icon: <Mail className="w-4 h-4" />,
           },
           {
             title: 'Sede Operacional',
             value: 'São Paulo — SP',
-            subtitle: 'CNPJ: 54.587.919/0001-52 · Atendimento Nacional',
-            icon: <Building2 className="w-4 h-4" />,
+            subtitle: COMPANY_INFO.fullAddress,
+            icon: <MapPin className="w-4 h-4" />,
           },
         ]}
         targetSectionId="contato-detalhes"
         onNavigate={onNavigate}
       />
 
-      <div id="contato-detalhes" className="relative w-full py-16 sm:py-20">
-        <div className="relative z-10 w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px] space-y-16">
+      {/* Main Content Area */}
+      <div id="contato-detalhes" className="relative z-20 py-16 sm:py-24">
+        <div className="w-full max-w-[1920px] mx-auto px-[25px] md:px-8 lg:px-[240px] space-y-16">
           
-          {/* Corporate Contact Cards Grid */}
+          {/* Official Company Identity Card */}
           <div className="p-6 sm:p-10 rounded-3xl bg-[#190B08] border border-[#E8C991]/30 shadow-[0_15px_40px_rgba(0,0,0,0.7)]">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
               
               {/* Razão Social & CNPJ */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-[#25100B] border border-white/10 flex flex-col justify-between">
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-[#190B08] border border-[#E8C991]/25 flex items-center justify-center text-[#E8C991] mb-4">
-                    <Building2 className="w-5 h-5" />
-                  </div>
-                  <span className="text-[13px] font-sans-clean uppercase tracking-wider text-white/50 block mb-1">
-                    Razão Social
-                  </span>
-                  <h4 className="text-[15px] sm:text-base font-editorial font-bold text-white mb-2 leading-snug">
-                    Mister Britz Distribuidora de Alimentos Ltda.
-                  </h4>
+              <div className="p-5 sm:p-6 rounded-2xl bg-[#25100B] border border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-[#190B08] border border-[#E8C991]/25 flex items-center justify-center text-[#E8C991] mb-4">
+                  <Building2 className="w-5 h-5" />
                 </div>
-                <div className="pt-3 border-t border-white/10 mt-2">
-                  <span className="text-[13px] font-sans-clean uppercase tracking-wider text-[#E8C991] block">
-                    CNPJ
+                <span className="text-[13px] font-sans-clean uppercase tracking-wider text-white/50 block mb-1">
+                  Razão Social &amp; CNPJ
+                </span>
+                <h4 className="text-[15px] sm:text-base font-editorial font-bold text-white mb-1.5 leading-snug">
+                  {COMPANY_INFO.corporateName}
+                </h4>
+                <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-[12px] font-mono text-white/80">
+                    CNPJ: {COMPANY_INFO.cnpj}
                   </span>
-                  <span className="text-[13px] font-mono text-white/90">
-                    54.587.919/0001-52
+                  <span className="text-[11px] text-[#E8C991] font-semibold uppercase">
+                    Ativa
                   </span>
                 </div>
               </div>
@@ -157,10 +172,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     Comercial Direto
                   </span>
                   <a
-                    href="tel:1110677878"
+                    href={`tel:${COMPANY_INFO.phoneRaw}`}
                     className="text-[18px] sm:text-xl font-editorial font-bold text-white hover:text-[#E8C991] transition-colors"
                   >
-                    (11) 1067-7878
+                    {COMPANY_INFO.phone}
                   </a>
                 </div>
                 <div className="pt-3 border-t border-white/10 mt-2 flex items-center gap-1.5 text-[13px] text-white/50 font-sans-clean">
@@ -179,10 +194,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     E-mail Oficial
                   </span>
                   <a
-                    href="mailto:contato@mrbritz.com"
+                    href={`mailto:${COMPANY_INFO.email}`}
                     className="text-[14px] font-sans-clean font-semibold text-white hover:text-[#E8C991] transition-colors break-all"
                   >
-                    contato@mrbritz.com
+                    {COMPANY_INFO.email}
                   </a>
                 </div>
                 <div className="pt-3 border-t border-white/10 mt-2 text-[13px] text-white/50 font-sans-clean">
@@ -190,34 +205,40 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 </div>
               </div>
 
-              {/* Localização */}
+              {/* Localização Oficial */}
               <div className="p-5 sm:p-6 rounded-2xl bg-[#25100B] border border-white/10 flex flex-col justify-between">
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-[#190B08] border border-[#E8C991]/25 flex items-center justify-center text-[#E8C991] mb-4">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <span className="text-[13px] font-sans-clean uppercase tracking-wider text-white/50 block mb-1">
-                    Sede Operacional
+                    Endereço Oficial
                   </span>
-                  <p className="text-[15px] sm:text-base font-editorial font-bold text-white">
-                    São Paulo — SP
+                  <p className="text-[14px] font-sans-clean font-medium text-white leading-snug">
+                    {COMPANY_INFO.address} - {COMPANY_INFO.neighborhood}
+                  </p>
+                  <p className="text-[13px] font-sans-clean text-[#E8C991]">
+                    {COMPANY_INFO.cityState} · CEP {COMPANY_INFO.cep}
                   </p>
                 </div>
                 <div className="pt-3 border-t border-white/10 mt-2 text-[13px] text-white/50 font-sans-clean">
-                  <span>Atendimento e logística nacional</span>
+                  <span>{COMPANY_INFO.origin}</span>
                 </div>
               </div>
             </div>
 
-            {/* Direct WhatsApp Callout */}
+            {/* Social Links & WhatsApp Commercial Banner */}
             <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
-                <span className="text-[13px] uppercase tracking-widest text-[#E8C991] font-sans-clean font-semibold block">
-                  Atendimento Instantâneo
-                </span>
-                <p className="text-[15px] text-white/70 font-sans-clean">
-                  Fale imediatamente com nosso assistente comercial via WhatsApp para cotações e dúvidas.
-                </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href={COMPANY_INFO.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#E8C991]/50 text-white text-[13px] flex items-center gap-2 transition-all cursor-pointer"
+                >
+                  <Facebook className="w-4 h-4 text-[#E8C991]" />
+                  <span>{COMPANY_INFO.facebook}</span>
+                </a>
               </div>
 
               <button
@@ -250,17 +271,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <div className="w-16 h-16 rounded-full bg-[#25D366]/20 border border-[#25D366] text-[#25D366] flex items-center justify-center mx-auto">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h4 className="text-[24px] sm:text-2xl font-editorial font-bold text-white uppercase">
-                      Mensagem Enviada!
+                    <h4 className="text-[20px] font-editorial font-bold text-white">
+                      Mensagem Enviada com Sucesso!
                     </h4>
-                    <p className="text-[15px] text-white/80 font-sans-clean max-w-md mx-auto">
-                      Obrigado pelo contato. Nossa equipe retornará no e-mail informado o mais rápido possível.
+                    <p className="text-[15px] text-white/70 font-sans-clean max-w-md mx-auto">
+                      Agradecemos o contato. Nosso departamento comercial retornará em até 2 horas úteis.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="mt-4 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-[13px] font-sans-clean text-white uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap"
+                      className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-sans-clean text-[13px] font-semibold transition-colors cursor-pointer"
                     >
-                      <span className="whitespace-nowrap">Enviar outra mensagem</span>
+                      Enviar Nova Mensagem
                     </button>
                   </div>
                 ) : (
@@ -268,7 +289,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
-                          Nome *
+                          Nome Completo *
                         </label>
                         <input
                           type="text"
@@ -282,14 +303,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                       <div>
                         <label className="block text-[13px] uppercase font-sans-clean tracking-wider text-white/70 mb-1.5">
-                          E-mail *
+                          E-mail Corporativo *
                         </label>
                         <input
                           type="email"
                           required
                           value={form.email}
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
-                          placeholder="seu@email.com"
+                          placeholder="seuemail@empresa.com.br"
                           className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors"
                         />
                       </div>
@@ -338,7 +359,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         required
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        placeholder="Como podemos te ajudar?"
+                        placeholder="Como podemos te ajudar? Cite os produtos de interesse (Chimichurry, Ana Maria, Edu Guedes, Orégano, Colorau)..."
                         className="w-full px-4 py-3 rounded-xl bg-[#25100B] border border-white/10 text-white placeholder-white/40 text-[14px] font-sans-clean focus:outline-none focus:border-[#E8C991] transition-colors resize-none"
                       />
                     </div>
@@ -347,8 +368,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       type="submit"
                       className="w-full py-4 px-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md whitespace-nowrap"
                     >
-                      <Send className="w-4 h-4 shrink-0" />
-                      <span className="whitespace-nowrap">ENVIAR MENSAGEM</span>
+                      <MessageCircle className="w-4 h-4 shrink-0 text-[#190B08]" />
+                      <span className="whitespace-nowrap">ENVIAR VIA WHATSAPP</span>
                     </button>
                   </form>
                 )}
@@ -357,7 +378,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
             {/* FAQs Column */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="p-6 rounded-2xl bg-[#190B08] border border-white/10">
+              <div className="p-6 sm:p-7 rounded-2xl bg-[#190B08] border border-white/10">
                 <h4 className="text-[18px] font-editorial font-bold text-white mb-4">
                   Dúvidas Frequentes (FAQ)
                 </h4>
@@ -373,6 +394,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Quality & Regulation Notice */}
+              <div className="p-5 rounded-2xl bg-[#190B08] border border-[#E8C991]/20 space-y-2">
+                <div className="flex items-center gap-2 text-[#E8C991] text-[13px] font-bold">
+                  <ShieldCheck className="w-4 h-4 text-[#C11D31]" />
+                  <span>Padronização e Certificação</span>
+                </div>
+                <p className="text-[13px] text-white/70 font-sans-clean leading-relaxed">
+                  Todos os produtos Mister Britz acompanham laudos bromatológicos, fichas de especificação técnica e rotulagem rigorosamente alinhada com as resoluções da ANVISA.
+                </p>
               </div>
             </div>
 

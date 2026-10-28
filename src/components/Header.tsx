@@ -85,7 +85,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-[90] transition-all duration-300 px-[25px] md:px-8 lg:px-[240px] pointer-events-auto ${
+        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 px-[25px] md:px-8 lg:px-[240px] pointer-events-auto ${
           isSolid
             ? 'bg-[#070302]/95 backdrop-blur-md py-3 sm:py-3.5 border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]'
             : 'bg-transparent pt-[16px] sm:pt-[24px] pb-3 sm:pb-4'
@@ -134,14 +134,25 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </nav>
 
-          {/* Right Action: Fale Conosco */}
-          <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={() => onOpenModal('contact')}
-              className="px-4 py-2.5 rounded-lg bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] uppercase tracking-wider transition-all shadow-md cursor-pointer whitespace-nowrap"
+          {/* Right: Contact Information & Email (No CTAs) */}
+          <div className="hidden lg:flex items-center gap-4 text-[13px] font-sans-clean">
+            <a
+              href="tel:+5511917592099"
+              className="flex items-center gap-1.5 text-[#F4EEE7]/85 hover:text-[#E8C991] transition-colors cursor-pointer"
+              title="Ligue ou envie WhatsApp para a Mister Britz"
             >
-              <span className="whitespace-nowrap">Fale Conosco</span>
-            </button>
+              <Phone className="w-3.5 h-3.5 text-[#E8C991]" />
+              <span className="whitespace-nowrap">(11) 91759-2099</span>
+            </a>
+            <span className="text-white/20 select-none">|</span>
+            <a
+              href="mailto:contato@mrbritz.com"
+              className="flex items-center gap-1.5 text-[#F4EEE7]/85 hover:text-[#E8C991] transition-colors cursor-pointer"
+              title="Envie um e-mail para a Mister Britz"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#E8C991]" />
+              <span className="whitespace-nowrap">contato@mrbritz.com</span>
+            </a>
           </div>
 
           {/* Mobile / Tablet Hamburger Button (48px touch target) */}
@@ -155,10 +166,10 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </header>
 
-      {/* Mobile Drawer Menu - Completely self-contained full viewport overlay with z-[100] */}
+      {/* Mobile Drawer Menu - Completely self-contained full viewport overlay with z-[9999] */}
       {mobileMenuOpen && (
         <div
-          className="xl:hidden fixed inset-0 z-[100] bg-[#070302] text-[#F4EEE7] flex flex-col justify-between overflow-y-auto pointer-events-auto h-[100dvh] w-full animate-fadeIn"
+          className="xl:hidden fixed inset-0 z-[9999] bg-[#070302] text-[#F4EEE7] flex flex-col justify-between overflow-y-auto pointer-events-auto h-[100dvh] w-full animate-fadeIn"
           role="dialog"
           aria-modal="true"
         >
@@ -219,37 +230,43 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </nav>
 
-          {/* Bottom Actions & Quick Contact in Mobile Menu */}
+          {/* Bottom Contact Details in Mobile Menu (Clean Contact Info & Email - No CTAs) */}
           <div className="shrink-0 px-[25px] pt-4 pb-8 border-t border-white/10 bg-[#0C0504] flex flex-col gap-3">
-            <button
-              onClick={() => {
-                onOpenModal('contact');
-                setMobileMenuOpen(false);
-              }}
-              className="w-full min-h-[50px] py-3.5 px-4 rounded-xl bg-[#E8C991] active:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
-            >
-              <span className="whitespace-nowrap">Falar com o Comercial</span>
-            </button>
+            <span className="text-[11px] font-sans-clean font-bold tracking-[2px] uppercase text-[#E8C991]">
+              Informações de Contato
+            </span>
 
-            <a
-              href="https://wa.me/551110677878"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full min-h-[48px] py-3 px-4 rounded-xl bg-[#25D366] text-[#0A2612] font-sans-clean font-bold text-[13px] uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md whitespace-nowrap"
-            >
-              <MessageCircle className="w-4 h-4 fill-[#0A2612] shrink-0" />
-              <span className="whitespace-nowrap">WhatsApp: (11) 1067-7878</span>
-            </a>
+            <div className="p-4 rounded-2xl bg-[#190B08] border border-white/10 space-y-3">
+              <a
+                href="tel:+5511917592099"
+                className="flex items-center gap-3 text-[13px] md:text-[14px] text-white/90 hover:text-[#E8C991] font-sans-clean transition-colors"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#25100B] border border-[#E8C991]/30 flex items-center justify-center text-[#E8C991] shrink-0">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[11px] text-white/50 uppercase tracking-wider font-semibold">Telefone / WhatsApp</span>
+                  <span className="whitespace-nowrap font-medium text-white">(11) 91759-2099</span>
+                </div>
+              </a>
 
-            <div className="flex items-center justify-between text-[13px] text-white/50 font-sans-clean pt-2">
-              <span className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-[#E8C991]" />
-                (11) 1067-7878
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#E8C991]" />
-                contato@mrbritz.com
-              </span>
+              <a
+                href="mailto:contato@mrbritz.com"
+                className="flex items-center gap-3 text-[13px] md:text-[14px] text-white/90 hover:text-[#E8C991] font-sans-clean transition-colors pt-2 border-t border-white/5"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#25100B] border border-[#E8C991]/30 flex items-center justify-center text-[#E8C991] shrink-0">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[11px] text-white/50 uppercase tracking-wider font-semibold">E-mail Comercial</span>
+                  <span className="whitespace-nowrap font-medium text-white">contato@mrbritz.com</span>
+                </div>
+              </a>
+            </div>
+
+            <div className="flex items-center justify-between text-[11px] text-white/50 font-sans-clean px-1">
+              <span>Atendimento Nacional B2B</span>
+              <span>Seg a Sex · 08h às 18h</span>
             </div>
           </div>
         </div>

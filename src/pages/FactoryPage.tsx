@@ -2,7 +2,7 @@ import React from 'react';
 import { Factory, Calendar, ShieldCheck, Boxes, Truck, ArrowRight } from 'lucide-react';
 import { PageTopHero } from '../components/PageTopHero';
 import { FactorySection } from '../components/FactorySection';
-import { HERO_BACKGROUNDS } from '../assets/heroBackgrounds';
+import { HERO_BACKGROUNDS, HERO_MOBILE_BACKGROUNDS } from '../assets/heroBackgrounds';
 import { ActiveModal, PageRoute } from '../types';
 
 interface FactoryPageProps {
@@ -22,6 +22,7 @@ export const FactoryPage: React.FC<FactoryPageProps> = ({
       <PageTopHero
         pageId="fabrica"
         customBgUrl={HERO_BACKGROUNDS.fabrica}
+        customMobileBgUrl={HERO_MOBILE_BACKGROUNDS.fabrica}
         mousePos={mousePos}
         breadcrumbLabel="Nossa Fábrica"
         eyebrowBadge="ESTRUTURA & OPERAÇÃO INDUSTRIAL"
@@ -34,14 +35,14 @@ export const FactoryPage: React.FC<FactoryPageProps> = ({
         subtitle="Onde qualidade encontra escala e padronização contínua."
         description="A estrutura fabril da Mister Britz combina alta tecnologia de processamento, conformidade sanitária rigorosa e processos padronizados para garantir excelência em cada lote."
         primaryCta={{
-          label: 'Explorar Infraestrutura',
+          label: 'Ver Estrutura',
           action: () => {
             const el = document.getElementById('fabrica');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           },
         }}
         secondaryCta={{
-          label: 'Solicitar Homologação',
+          label: 'Homologação',
           action: () => onOpenModal('contact'),
           icon: <Calendar className="w-4 h-4 text-[#25D366]" />,
         }}
@@ -95,13 +96,13 @@ export const FactoryPage: React.FC<FactoryPageProps> = ({
                 className="w-full sm:w-auto px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2 sm:gap-2.5 transition-all shadow-md cursor-pointer whitespace-nowrap"
               >
                 <Calendar className="w-4 h-4 shrink-0" />
-                <span className="whitespace-nowrap">SOLICITAR HOMOLOGAÇÃO</span>
+                <span className="whitespace-nowrap">Homologação</span>
               </button>
               <button
                 onClick={() => onNavigate('qualidade')}
                 className="w-full sm:w-auto px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-[#25100B] hover:bg-[#301610] text-[#E8C991] border border-[#E8C991]/30 hover:border-[#E8C991] font-sans-clean font-semibold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer whitespace-nowrap"
               >
-                <span className="whitespace-nowrap">VER PROTOCOLOS DE QUALIDADE</span>
+                <span className="whitespace-nowrap">Ver Qualidade</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
             </div>

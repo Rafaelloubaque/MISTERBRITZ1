@@ -317,7 +317,7 @@ export const FactorySection: React.FC<FactorySectionProps> = ({ onOpenModal }) =
               onClick={() => onOpenModal('contact')}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#921D2B] hover:bg-[#A82434] active:bg-[#7D1924] text-white text-[13px] sm:text-[14px] font-sans-clean font-bold uppercase tracking-wider sm:tracking-[2px] shadow-lg shadow-black/50 border border-white/10 transition-all duration-200 cursor-pointer group whitespace-nowrap"
             >
-              <span className="whitespace-nowrap">CONHEÇA NOSSA ESTRUTURA</span>
+              <span className="whitespace-nowrap">Ver Estrutura</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform shrink-0" />
             </button>
           </div>

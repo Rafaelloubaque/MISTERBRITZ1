@@ -9,12 +9,14 @@ const OREGANO_JAR_IMG = '/src/assets/images/mrbritz_oregano_jar_1790172051486.jp
 
 interface HeroVisualsProps {
   customBgUrl?: string | null;
+  customMobileBgUrl?: string | null;
   mousePos: { x: number; y: number }; // normalized -0.5 to 0.5
   viewMode?: 'composite' | 'layered';
 }
 
 export const HeroVisuals: React.FC<HeroVisualsProps> = ({
   customBgUrl,
+  customMobileBgUrl,
   mousePos,
   viewMode = 'composite',
 }) => {
@@ -25,6 +27,7 @@ export const HeroVisuals: React.FC<HeroVisualsProps> = ({
   const [entranceComplete, setEntranceComplete] = useState(false);
 
   const activeBg = customBgUrl || DEFAULT_HERO_BG;
+  const activeMobileBg = customMobileBgUrl || activeBg;
 
   useEffect(() => {
     // 1. Background fade-in in 800ms
@@ -79,9 +82,20 @@ export const HeroVisuals: React.FC<HeroVisualsProps> = ({
 
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none">
-      {/* 1. Base Atmospheric Background Layer */}
+      {/* 1. Mobile Background Layer (Portrait 9:16) */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-no-repeat transition-opacity ease-out"
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-opacity ease-out block md:hidden"
+        style={{
+          backgroundImage: `url("${activeMobileBg}")`,
+          opacity: bgLoaded ? 1 : 0,
+          transitionDuration: '800ms',
+          transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      />
+
+      {/* 1. Desktop Background Layer (Landscape with subtle parallax) */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-no-repeat transition-opacity ease-out hidden md:block"
         style={{
           backgroundImage: `url("${activeBg}")`,
           backgroundPosition: 'center right',

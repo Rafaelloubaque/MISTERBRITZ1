@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { HeroVisuals } from './HeroVisuals';
 import { PageRoute } from '../types';
-import { HERO_BACKGROUNDS } from '../assets/heroBackgrounds';
+import { HERO_BACKGROUNDS, HERO_MOBILE_BACKGROUNDS } from '../assets/heroBackgrounds';
 
 export interface PageTopHeroProps {
   pageId: PageRoute;
   mousePos: { x: number; y: number };
   customBgUrl?: string;
+  customMobileBgUrl?: string;
   breadcrumbLabel: string;
   eyebrowBadge: string;
   badgeIcon?: React.ReactNode;
@@ -38,6 +39,7 @@ export const PageTopHero: React.FC<PageTopHeroProps> = ({
   pageId,
   mousePos,
   customBgUrl,
+  customMobileBgUrl,
   breadcrumbLabel,
   eyebrowBadge,
   badgeIcon,
@@ -67,11 +69,12 @@ export const PageTopHero: React.FC<PageTopHeroProps> = ({
   });
 
   const heroBg = customBgUrl || (pageId in HERO_BACKGROUNDS ? (HERO_BACKGROUNDS as Record<string, string>)[pageId] : undefined);
+  const heroMobileBg = customMobileBgUrl || (pageId in HERO_MOBILE_BACKGROUNDS ? (HERO_MOBILE_BACKGROUNDS as Record<string, string>)[pageId] : undefined);
 
   return (
     <section className="relative w-full min-h-[100svh] lg:h-screen lg:min-h-[860px] flex flex-col justify-between overflow-hidden bg-[#0D0503]">
       {/* Visuals Layer (Background + Overlay + Parallax with page specific hero bg) */}
-      <HeroVisuals mousePos={mousePos} customBgUrl={heroBg} />
+      <HeroVisuals mousePos={mousePos} customBgUrl={heroBg} customMobileBgUrl={heroMobileBg} />
 
       {/* Main Content Area */}
       <div className="relative z-30 w-full flex flex-col justify-center px-[25px] md:px-8 lg:px-[240px] pt-[100px] sm:pt-[120px] pb-14 sm:pb-20 lg:pt-[100px] lg:pb-0 my-auto pointer-events-none">

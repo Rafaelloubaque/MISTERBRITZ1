@@ -79,21 +79,21 @@ export const HeroContent: React.FC<HeroContentProps> = ({ onOpenModal }) => {
         style={getAnimStyle(860)}
         className="mt-[20px] sm:mt-[30px] flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-[14px] w-full"
       >
-        {/* Button 1: Conheça Nossos Produtos */}
+        {/* Button 1: Ver Produtos */}
         <button
           onClick={() => onOpenModal('products')}
-          className="h-[52px] sm:h-[64px] w-full sm:w-auto sm:min-w-[280px] px-5 sm:px-[30px] rounded-full bg-gradient-to-r from-[#8D1422] to-[#C11D31] text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group shadow-lg whitespace-nowrap"
+          className="h-[52px] sm:h-[64px] w-full sm:w-auto sm:min-w-[220px] px-5 sm:px-[30px] rounded-full bg-gradient-to-r from-[#8D1422] to-[#C11D31] text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group shadow-lg whitespace-nowrap"
         >
-          <span className="whitespace-nowrap">Conheça Nossos Produtos</span>
+          <span className="whitespace-nowrap">Ver Produtos</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 shrink-0" strokeWidth={2} />
         </button>
 
-        {/* Button 2: Fale com o Comercial */}
+        {/* Button 2: Contato Comercial */}
         <button
           onClick={() => onOpenModal('contact')}
-          className="h-[52px] sm:h-[64px] w-full sm:w-auto sm:min-w-[240px] px-5 sm:px-[26px] rounded-full bg-white/[0.04] border-[1.5px] border-white/80 text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:bg-white/10 hover:border-white cursor-pointer active:scale-[0.99] whitespace-nowrap"
+          className="h-[52px] sm:h-[64px] w-full sm:w-auto sm:min-w-[200px] px-5 sm:px-[26px] rounded-full bg-white/[0.04] border-[1.5px] border-white/80 text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 hover:bg-white/10 hover:border-white cursor-pointer active:scale-[0.99] whitespace-nowrap"
         >
-          <span className="whitespace-nowrap">Fale com o Comercial</span>
+          <span className="whitespace-nowrap">Contato Comercial</span>
           <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" strokeWidth={2} />
         </button>
       </div>

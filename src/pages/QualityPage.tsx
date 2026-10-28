@@ -2,7 +2,7 @@ import React from 'react';
 import { Award, FileText, CheckCircle, PackageCheck, ArrowRight } from 'lucide-react';
 import { PageTopHero } from '../components/PageTopHero';
 import { QualitySection } from '../components/QualitySection';
-import { HERO_BACKGROUNDS } from '../assets/heroBackgrounds';
+import { HERO_BACKGROUNDS, HERO_MOBILE_BACKGROUNDS } from '../assets/heroBackgrounds';
 import { ActiveModal, PageRoute } from '../types';
 
 interface QualityPageProps {
@@ -22,6 +22,7 @@ export const QualityPage: React.FC<QualityPageProps> = ({
       <PageTopHero
         pageId="qualidade"
         customBgUrl={HERO_BACKGROUNDS.qualidade}
+        customMobileBgUrl={HERO_MOBILE_BACKGROUNDS.qualidade}
         mousePos={mousePos}
         breadcrumbLabel="Qualidade"
         eyebrowBadge="PADRÃO MISTER BRITZ"
@@ -34,14 +35,14 @@ export const QualityPage: React.FC<QualityPageProps> = ({
         subtitle="Um bom produto começa muito antes da prateleira."
         description="Da seleção criteriosa de insumos à gôndola do varejo: processos consistentes, rastreabilidade de lote e acondicionamento projetado para máxima conservação e giro."
         primaryCta={{
-          label: 'Ver Jornada de Qualidade',
+          label: 'Ver Qualidade',
           action: () => {
             const el = document.getElementById('qualidade');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           },
         }}
         secondaryCta={{
-          label: 'Fichas Técnicas & Laudos',
+          label: 'Fichas & Laudos',
           action: () => onOpenModal('contact'),
           icon: <FileText className="w-4 h-4 text-[#E8C991]" />,
         }}
@@ -94,14 +95,14 @@ export const QualityPage: React.FC<QualityPageProps> = ({
                 onClick={() => onOpenModal('contact')}
                 className="w-full sm:w-auto px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all shadow-md cursor-pointer whitespace-nowrap"
               >
-                <span className="whitespace-nowrap">SOLICITAR FICHAS TÉCNICAS</span>
+                <span className="whitespace-nowrap">Fichas Técnicas</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
               <button
                 onClick={() => onNavigate('esg')}
                 className="w-full sm:w-auto px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-[#25100B] hover:bg-[#301610] text-[#E8C991] border border-[#E8C991]/30 hover:border-[#E8C991] font-sans-clean font-semibold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer whitespace-nowrap"
               >
-                <span className="whitespace-nowrap">VER COMPROMISSOS ESG</span>
+                <span className="whitespace-nowrap">Ver ESG</span>
               </button>
             </div>
           </div>

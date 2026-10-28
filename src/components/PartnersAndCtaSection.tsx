@@ -140,7 +140,7 @@ export const PartnersAndCtaSection: React.FC<PartnersAndCtaSectionProps> = ({
                 onClick={handleOpenPartner}
                 className="w-full sm:w-auto px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all shadow-[0_4px_20px_rgba(232,201,145,0.25)] cursor-pointer whitespace-nowrap"
               >
-                <span className="whitespace-nowrap">QUERO SER PARCEIRO</span>
+                <span className="whitespace-nowrap">Ser Parceiro</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
             </div>
@@ -211,7 +211,7 @@ export const PartnersAndCtaSection: React.FC<PartnersAndCtaSectionProps> = ({
                 className="w-full md:w-auto px-5 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 transition-all shadow-[0_4px_25px_rgba(232,201,145,0.3)] cursor-pointer whitespace-nowrap"
               >
                 <PhoneCall className="w-4 h-4 text-[#190B08] shrink-0" />
-                <span className="whitespace-nowrap">FALAR COM O COMERCIAL</span>
+                <span className="whitespace-nowrap">Contato Comercial</span>
               </button>
             </div>
           </div>

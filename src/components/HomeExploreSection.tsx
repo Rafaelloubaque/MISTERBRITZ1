@@ -15,7 +15,7 @@ export const HomeExploreSection: React.FC<HomeExploreSectionProps> = ({ onNaviga
       subtitle: 'Onde qualidade encontra escala.',
       description: 'Conheça nossa estrutura industrial, maquinários de precisão e processos padronizados.',
       icon: Factory,
-      cta: 'Conhecer Fábrica',
+      cta: 'Ver Fábrica',
       highlight: 'Alta Capacidade',
     },
     {
@@ -25,7 +25,7 @@ export const HomeExploreSection: React.FC<HomeExploreSectionProps> = ({ onNaviga
       subtitle: 'Um bom produto começa muito antes da prateleira.',
       description: 'Jornada completa do produto: matéria-prima, processos, acondicionamento e logística.',
       icon: Award,
-      cta: 'Ver Jornada de Qualidade',
+      cta: 'Ver Qualidade',
       highlight: 'Rigor Técnico',
     },
     {
@@ -35,7 +35,7 @@ export const HomeExploreSection: React.FC<HomeExploreSectionProps> = ({ onNaviga
       subtitle: 'Crescer também significa fazer escolhas responsáveis.',
       description: 'Práticas ambientais conscientes, valorização de pessoas e governança transparente.',
       icon: Leaf,
-      cta: 'Nossas Práticas ESG',
+      cta: 'Ver ESG',
       highlight: 'Consciência',
     },
     {
@@ -55,7 +55,7 @@ export const HomeExploreSection: React.FC<HomeExploreSectionProps> = ({ onNaviga
       subtitle: 'O próximo ponto de venda Mister Britz pode ser o seu.',
       description: 'Condições exclusivas para distribuidoras, redes de supermercados, lojas e food service.',
       icon: Handshake,
-      cta: 'Seja um Parceiro',
+      cta: 'Ser Parceiro',
       highlight: 'Crescimento B2B',
     },
     {
@@ -65,7 +65,7 @@ export const HomeExploreSection: React.FC<HomeExploreSectionProps> = ({ onNaviga
       subtitle: 'Fale com a Mister Britz.',
       description: 'Atendimento corporativo ágil via WhatsApp, telefone e equipe de suporte comercial.',
       icon: Phone,
-      cta: 'Canais de Contato',
+      cta: 'Ver Contato',
       highlight: 'Suporte Ágil',
     },
   ];

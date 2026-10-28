@@ -403,7 +403,7 @@ export const QualitySection: React.FC<QualitySectionProps> = ({ onOpenModal }) =
                 onClick={() => onOpenModal('contact')}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-[#C11D31] hover:bg-[#A31627] text-white font-sans-clean font-bold text-[12px] xs:text-[13px] sm:text-sm tracking-wider sm:tracking-[2px] uppercase shadow-lg shadow-black/40 transition-all duration-300 active:scale-95 group cursor-pointer whitespace-nowrap"
               >
-                <span className="whitespace-nowrap">FALAR COM NOSSO TIME</span>
+                <span className="whitespace-nowrap">Fale Conosco</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
               </button>
 

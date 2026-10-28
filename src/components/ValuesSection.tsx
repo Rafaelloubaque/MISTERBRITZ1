@@ -289,7 +289,7 @@ export const ValuesSection: React.FC<ValuesSectionProps> = ({ onOpenModal }) => 
             onClick={() => onOpenModal('contact')}
             className="w-full sm:w-auto shrink-0 h-[48px] sm:h-[52px] px-5 sm:px-8 rounded-full bg-[#C11D31] hover:bg-[#8D1422] text-white font-sans-clean text-[13px] md:text-[14px] font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.99] cursor-pointer whitespace-nowrap"
           >
-            <span className="whitespace-nowrap">Falar com o Comercial</span>
+            <span className="whitespace-nowrap">Contato Comercial</span>
             <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>

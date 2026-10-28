@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, Search, ArrowRight } from 'lucide-react';
+import { X, Search, ArrowRight, Scale } from 'lucide-react';
+import { PRODUCTS_CATALOG } from '../data/productsData';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -8,14 +9,15 @@ interface SearchModalProps {
 }
 
 const SEARCHABLE_ITEMS = [
-  { title: 'Colorau Especial Extra Vermelho', category: 'Condimentos', desc: 'Alta pigmentação em sementes de urucum puro' },
-  { title: 'Alho Triturado Puro Sem Sal', category: 'Alho & Pastas', desc: 'Moído a frio, textura e aroma marcante' },
-  { title: 'Alho Triturado Com Sal', category: 'Alho & Pastas', desc: 'Pronto para uso culinário em alta escala' },
-  { title: 'Orégano Selecionado Folhas', category: 'Ervas & Desidratados', desc: 'Aroma fresco com tripla limpeza' },
-  { title: 'Mix Chimichurri Especial', category: 'Blends Gourmet', desc: 'Perfeito para cortes bovinos e marinadas' },
-  { title: 'Lemon Pepper Cítrico', category: 'Blends Gourmet', desc: 'Toque de limão com pimenta preta nobre' },
-  { title: 'Atendimento B2B & Distribuição', category: 'Comercial', desc: 'Fornecimento para supermercados e food service' },
-  { title: 'Embalagens Food Service (1kg a 25kg)', category: 'Soluções Industriais', desc: 'Grandes formatos para cozinhas industriais' },
+  ...PRODUCTS_CATALOG.map((p) => ({
+    title: p.name,
+    category: p.category,
+    desc: `${p.weight} · ${p.description.slice(0, 90)}...`,
+    weight: p.weight,
+  })),
+  { title: 'Atendimento B2B & Distribuição', category: 'Comercial', desc: 'Fornecimento para supermercados, atacados e food service', weight: '' },
+  { title: 'Rotulagem & Laudos ANVISA', category: 'Qualidade', desc: 'Tabelas nutricionais oficiais e laudos bromatológicos', weight: '' },
+  { title: 'Private Label & Marcas Próprias', category: 'Soluções Industriais', desc: 'Produção sob medida com padrões de excelência', weight: '' },
 ];
 
 export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSelectProduct }) => {
@@ -29,7 +31,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
         item.category.toLowerCase().includes(query.toLowerCase()) ||
         item.desc.toLowerCase().includes(query.toLowerCase())
       )
-    : SEARCHABLE_ITEMS.slice(0, 5);
+    : SEARCHABLE_ITEMS.slice(0, 6);
 
   return (
     <div className="fixed inset-0 z-[120] flex items-start justify-center p-4 sm:p-6 pt-20 sm:pt-24 bg-black/85 backdrop-blur-md animate-fadeIn">
@@ -43,14 +45,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
           <input
             type="text"
             autoFocus
-            placeholder="Buscar condimentos, alho, orégano, colorau ou atacado..."
+            placeholder="Buscar Chimichurry, Ana Maria, Edu Guedes, Orégano, Colorau..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-transparent border-none text-sm sm:text-base text-white placeholder-white/40 focus:outline-none"
+            className="w-full bg-transparent border-none text-[15px] sm:text-base text-white placeholder-white/40 focus:outline-none"
           />
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full text-white/60 hover:text-white hover:bg-white/10"
+            className="p-1.5 rounded-full text-white/60 hover:text-white hover:bg-white/10 cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -58,7 +60,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
 
         <div className="p-4 sm:p-6 max-h-[60vh] overflow-y-auto space-y-2">
           <div className="text-[11px] font-sans-clean font-semibold uppercase tracking-wider text-[#E8C991] mb-2">
-            {query ? `Resultados (${results.length})` : 'Sugestões Populares'}
+            {query ? `Resultados (${results.length})` : 'Sugestões Oficiais'}
           </div>
 
           {results.length === 0 ? (
@@ -73,18 +75,25 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
                   onSelectProduct(item.title);
                   onClose();
                 }}
-                className="p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-[#E8C991]/40 hover:bg-white/[0.06] transition-all cursor-pointer flex items-center justify-between group"
+                className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-[#E8C991]/40 hover:bg-white/[0.06] transition-all cursor-pointer flex items-center justify-between group"
               >
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-[#E8C991]">
-                    {item.category}
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#E8C991]">
+                      {item.category}
+                    </span>
+                    {item.weight && (
+                      <span className="text-[10px] text-white/60 font-mono">
+                        · {item.weight}
+                      </span>
+                    )}
                   </div>
-                  <div className="text-sm font-editorial font-bold text-[#F7F1E8] group-hover:text-white">
+                  <div className="text-[15px] font-editorial font-bold text-[#F7F1E8] group-hover:text-white">
                     {item.title}
                   </div>
-                  <div className="text-xs text-white/60">{item.desc}</div>
+                  <div className="text-[13px] text-white/60 line-clamp-1">{item.desc}</div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#E8C991] group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#E8C991] group-hover:translate-x-1 transition-all shrink-0" />
               </div>
             ))
           )}

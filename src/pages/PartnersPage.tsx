@@ -32,6 +32,22 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const parts = [
+      `*SOLICITAÇÃO DE PARCERIA COMERCIAL - MISTER BRITZ*`,
+      `----------------------------------------`,
+      `*Nome:* ${partnerForm.name}`,
+      `*Empresa:* ${partnerForm.company}`,
+      `*Segmento:* ${partnerForm.segment}`,
+      `*Cidade/UF:* ${partnerForm.cityState}`,
+      `*WhatsApp:* ${partnerForm.whatsapp}`,
+      `*E-mail:* ${partnerForm.email}`,
+      partnerForm.message ? `*Mensagem / Demanda:* ${partnerForm.message}` : null,
+      `----------------------------------------`,
+      `_Enviado pelo formulário de parceiros do site Mister Britz_`,
+    ].filter(Boolean);
+
+    const text = encodeURIComponent(parts.join('\n'));
+    window.open(`https://wa.me/5511917592099?text=${text}`, '_blank', 'noopener,noreferrer');
     setIsSubmitted(true);
   };
 
@@ -39,7 +55,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
     const text = encodeURIComponent(
       `Olá! Tenho interesse em ser parceiro da Mister Britz (Empresa: ${partnerForm.company || 'Minha Empresa'}, Segmento: ${partnerForm.segment}). Gostaria de receber a apresentação comercial e catálogo.`
     );
-    window.open(`https://wa.me/551110677878?text=${text}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/5511917592099?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -293,8 +309,8 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                       type="submit"
                       className="w-full py-4 px-4 rounded-xl bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-sans-clean font-bold text-[13px] uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all shadow-[0_4px_25px_rgba(232,201,145,0.3)] cursor-pointer mt-2 whitespace-nowrap"
                     >
-                      <PhoneCall className="w-4 h-4 shrink-0" />
-                      <span className="whitespace-nowrap">SOLICITAR CONTATO COMERCIAL</span>
+                      <MessageCircle className="w-4 h-4 shrink-0 text-[#190B08]" />
+                      <span className="whitespace-nowrap">SOLICITAR VIA WHATSAPP</span>
                     </button>
                   </form>
                 )}

@@ -32,17 +32,35 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    const parts = [
+      `*CONTATO COMERCIAL B2B - MISTER BRITZ*`,
+      `----------------------------------------`,
+      `*Nome:* ${formData.nome}`,
+      `*Empresa:* ${formData.empresa}`,
+      formData.cnpj ? `*CNPJ:* ${formData.cnpj}` : null,
+      `*Telefone / WhatsApp:* ${formData.telefone}`,
+      `*E-mail:* ${formData.email}`,
+      `*Segmento:* ${formData.tipoNegocio}`,
+      formData.mensagem ? `*Mensagem / Pedido:* ${formData.mensagem}` : null,
+      `----------------------------------------`,
+      `_Enviado pelo formulário comercial do site Mister Britz_`,
+    ].filter(Boolean);
+
+    const text = encodeURIComponent(parts.join('\n'));
+    window.open(`https://wa.me/5511917592099?text=${text}`, '_blank', 'noopener,noreferrer');
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 1000);
+    }, 400);
   };
 
   const handleWhatsAppDirect = () => {
     const text = encodeURIComponent(
       `Olá Mister Britz! Tenho interesse em representação comercial / compras B2B para minha empresa (${formData.empresa || 'Empresa'}) no segmento de ${formData.tipoNegocio}.`
     );
-    window.open(`https://wa.me/551110677878?text=${text}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/5511917592099?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -117,7 +135,7 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
                 <div className="bg-[#1C0D08] border border-[#E8C991]/20 rounded-2xl p-4 space-y-3">
                   <div className="flex items-center gap-3 text-xs text-white/90">
                     <Phone className="w-4 h-4 text-[#E8C991] shrink-0" />
-                    <span>(11) 1067-7878</span>
+                    <span>(11) 91759-2099</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-white/90">
                     <Mail className="w-4 h-4 text-[#E8C991] shrink-0" />
@@ -125,7 +143,7 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
                   </div>
                   <div className="flex items-center gap-3 text-xs text-white/90">
                     <MapPin className="w-4 h-4 text-[#E8C991] shrink-0" />
-                    <span>São Paulo — SP · CNPJ 54.587.919/0001-52</span>
+                    <span>Rua Oswaldo Nascimento, 78 - Jardim Vieira, São Paulo – SP</span>
                   </div>
                 </div>
 
@@ -135,7 +153,7 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
                   className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0A2612] font-semibold text-[13px] md:text-[14px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all shadow-[0_4px_16px_rgba(37,211,102,0.3)] cursor-pointer whitespace-nowrap"
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" />
-                  <span className="whitespace-nowrap">Conversar no WhatsApp</span>
+                  <span className="whitespace-nowrap">WhatsApp</span>
                 </button>
               </div>
 
@@ -250,8 +268,8 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
                   disabled={isSubmitting}
                   className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#8D1422] to-[#B81D2E] hover:from-[#A51928] hover:to-[#C82136] text-white font-semibold text-[13px] md:text-[14px] uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_4px_20px_rgba(184,29,46,0.35)] cursor-pointer whitespace-nowrap"
                 >
-                  <Send className="w-3.5 h-3.5 shrink-0" />
-                  <span className="whitespace-nowrap">{isSubmitting ? 'Enviando...' : 'Enviar Solicitação Comercial'}</span>
+                  <MessageCircle className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
+                  <span className="whitespace-nowrap">{isSubmitting ? 'Abrindo WhatsApp...' : 'Enviar via WhatsApp'}</span>
                 </button>
               </form>
             </div>
