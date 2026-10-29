@@ -1,8 +1,10 @@
 import { ProductItem } from '../types';
-import colorauImg from '../assets/images/mrbritz_colorau_jar_1790172083265.jpg';
-import oreganoImg from '../assets/images/mrbritz_oregano_jar_1790172051486.jpg';
-import blendsImg from '../assets/images/mrbritz_hero_composite_1790172070744.jpg';
-import alhoImg from '../assets/images/mrbritz_garlic_jar_1790172023185.jpg';
+import oreganoImg from '../assets/Imagem do ChatGPT 29 de out. de 2026, 20_37_48-1.png';
+import chimichurryDefumadoImg from '../assets/Imagem do ChatGPT 29 de out. de 2026, 20_37_49-2.png';
+import chimichurryImg from '../assets/Imagem do ChatGPT 29 de out. de 2026, 20_37_49-3.png';
+import anaMariaImg from '../assets/Imagem do ChatGPT 29 de out. de 2026, 20_37_50-4.png';
+import eduGuedesImg from '../assets/Imagem do ChatGPT 29 de out. de 2026, 20_37_50-5.png';
+import colorauImg from '../assets/Imagem do ChatGPT 29 de out. de 2026, 20_37_51-6.png';
 
 export const COMPANY_INFO = {
   brand: 'MR. BRITZ FOODS',
@@ -46,7 +48,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
     applications: ['Churrasco e grelhados', 'Marinadas e assados', 'Molho chimichurri fresco', 'Hambúrgueres artesanais'],
     shelfLife: 'Validade impressa no rótulo',
     badge: 'Linha Gourmet',
-    image: blendsImg,
+    image: chimichurryDefumadoImg,
     glutenFree: true,
     conservation: COMPANY_INFO.conservation,
     notes: [
@@ -84,7 +86,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
     applications: ['Carnes bovinas e suínas', 'Legumes grelhados', 'Vinagretes e molhos', 'Pizzas e assados'],
     shelfLife: 'Validade impressa no rótulo',
     badge: 'Alto Giro',
-    image: blendsImg,
+    image: chimichurryImg,
     glutenFree: true,
     conservation: COMPANY_INFO.conservation,
     notes: [
@@ -122,7 +124,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
     applications: ['Aves e ensopados', 'Arroz temperado e risotos', 'Farofas e tortas', 'Feijão e sopas'],
     shelfLife: 'Validade impressa no rótulo',
     badge: 'Campeão de Vendas',
-    image: alhoImg,
+    image: anaMariaImg,
     glutenFree: true,
     conservation: COMPANY_INFO.conservation,
     notes: [
@@ -160,7 +162,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
     applications: ['Carnes de panela e assadas', 'Caldos e ensopados', 'Recheios de salgados', 'Molhos e marinadas'],
     shelfLife: 'Validade impressa no rótulo',
     badge: 'Mais Desejado',
-    image: alhoImg,
+    image: eduGuedesImg,
     glutenFree: true,
     conservation: COMPANY_INFO.conservation,
     notes: [

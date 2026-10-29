@@ -161,16 +161,6 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                 </ul>
               </div>
 
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={handleWhatsAppDirect}
-                  className="w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0A2612] font-sans-clean font-bold text-[13px] uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-md whitespace-nowrap"
-                >
-                  <MessageCircle className="w-4 h-4 fill-[#0A2612]" />
-                  <span className="whitespace-nowrap">FALAR NO WHATSAPP AGORA</span>
-                </button>
-              </div>
             </div>
 
             {/* Right Form Column */}

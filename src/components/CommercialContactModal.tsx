@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, CheckCircle2, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { X, CheckCircle2, MessageCircle } from 'lucide-react';
 
 interface CommercialContactModalProps {
   isOpen: boolean;
@@ -56,17 +56,10 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
     }, 400);
   };
 
-  const handleWhatsAppDirect = () => {
-    const text = encodeURIComponent(
-      `Olá Mister Britz! Tenho interesse em representação comercial / compras B2B para minha empresa (${formData.empresa || 'Empresa'}) no segmento de ${formData.tipoNegocio}.`
-    );
-    window.open(`https://wa.me/5511917592099?text=${text}`, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div
-        className="relative w-full max-w-3xl bg-[#120805] border border-[#E8C991]/30 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.95)] flex flex-col max-h-[92vh]"
+        className="relative w-full max-w-2xl bg-[#120805] border border-[#E8C991]/30 rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.95)] flex flex-col max-h-[92vh]"
         role="dialog"
         aria-modal="true"
       >
@@ -92,73 +85,28 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
 
         <div className="p-6 sm:p-8 overflow-y-auto flex-1">
           {submitted ? (
-            <div className="py-12 flex flex-col items-center text-center">
+            <div className="py-10 flex flex-col items-center text-center">
               <CheckCircle2 className="w-16 h-16 text-[#25D366] mb-4 animate-bounce" />
               <h3 className="text-2xl font-editorial font-bold text-[#F7F1E8]">
-                Mensagem Recebida com Sucesso!
+                Mensagem Enviada com Sucesso!
               </h3>
               <p className="text-white/80 max-w-md mt-2 text-sm leading-relaxed font-sans-clean">
-                Nosso consultor executivo responsável pela sua região entrará em contato em até 2 horas úteis com a tabela de preços e opções de frete FOB/CIF.
+                Seus dados foram direcionados para o WhatsApp comercial da Mister Britz. Nossa equipe já está pronta para atendê-lo.
               </p>
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={handleWhatsAppDirect}
-                  className="px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-black font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors"
-                >
-                  <MessageCircle className="w-4 h-4 text-black" />
-                  <span>Falar Imediatamente no WhatsApp</span>
-                </button>
+              <div className="mt-6">
                 <button
                   onClick={() => {
                     setSubmitted(false);
                     onClose();
                   }}
-                  className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs tracking-wider uppercase transition-colors"
+                  className="px-8 py-3 rounded-full bg-[#E8C991] hover:bg-[#d8b77a] text-[#190B08] font-bold text-xs tracking-wider uppercase transition-colors"
                 >
                   Fechar Janela
                 </button>
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Left Contact Details & WhatsApp Banner */}
-              <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
-                <div>
-                  <h4 className="text-sm font-semibold uppercase tracking-wider text-[#E8C991] mb-2 font-sans-clean">
-                    Distribuição &amp; Fornecimento
-                  </h4>
-                  <p className="text-xs text-white/75 leading-relaxed font-sans-clean">
-                    Atendemos redes de supermercados, atacadistas, distribuidores regionais e food service com preços direto de fábrica e pontualidade logística.
-                  </p>
-                </div>
-
-                <div className="bg-[#1C0D08] border border-[#E8C991]/20 rounded-2xl p-4 space-y-3">
-                  <div className="flex items-center gap-3 text-xs text-white/90">
-                    <Phone className="w-4 h-4 text-[#E8C991] shrink-0" />
-                    <span>(11) 91759-2099</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-xs text-white/90">
-                    <Mail className="w-4 h-4 text-[#E8C991] shrink-0" />
-                    <span>contato@mrbritz.com</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-xs text-white/90">
-                    <MapPin className="w-4 h-4 text-[#E8C991] shrink-0" />
-                    <span>Rua Oswaldo Nascimento, 78 - Jardim Vieira, São Paulo – SP</span>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={handleWhatsAppDirect}
-                  className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0A2612] font-semibold text-[13px] md:text-[14px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all shadow-[0_4px_16px_rgba(37,211,102,0.3)] cursor-pointer whitespace-nowrap"
-                >
-                  <MessageCircle className="w-4 h-4 shrink-0" />
-                  <span className="whitespace-nowrap">WhatsApp</span>
-                </button>
-              </div>
-
-              {/* Form Fields */}
-              <form onSubmit={handleSubmit} className="lg:col-span-7 space-y-4">
+            <form onSubmit={handleSubmit} className="w-full space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-[11px] font-medium text-[#E8C991] uppercase tracking-wider mb-1">
@@ -272,7 +220,6 @@ export const CommercialContactModal: React.FC<CommercialContactModalProps> = ({
                   <span className="whitespace-nowrap">{isSubmitting ? 'Abrindo WhatsApp...' : 'Enviar via WhatsApp'}</span>
                 </button>
               </form>
-            </div>
           )}
         </div>
       </div>

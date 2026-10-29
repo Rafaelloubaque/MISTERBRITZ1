@@ -87,6 +87,16 @@ export const ProductsModal: React.FC<ProductsModalProps> = ({
                 className="p-5 rounded-2xl bg-[#190B08] border border-white/10 hover:border-[#E8C991]/40 transition-all flex flex-col justify-between group"
               >
                 <div>
+                  {item.image && (
+                    <div className="w-full aspect-[1122/1402] max-h-56 bg-[#0A0403] rounded-xl overflow-hidden mb-3 border border-white/5">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <span className="text-[11px] font-sans-clean uppercase tracking-wider text-[#E8C991] font-semibold">
                       {item.category}

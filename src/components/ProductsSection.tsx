@@ -173,7 +173,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
                 className="group relative rounded-2xl bg-[#120705] border border-white/10 hover:border-[#E8C991]/50 transition-all duration-300 flex flex-col overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_40px_rgba(193,29,49,0.15)]"
               >
                 {/* Imagem do Produto com Tag de Peso Líquido */}
-                <div className="relative w-full aspect-[4/3] bg-[#170C09] overflow-hidden border-b border-white/10 flex items-center justify-center">
+                <div className="relative w-full aspect-[1122/1402] bg-[#0A0403] overflow-hidden border-b border-white/10">
                   {product.image && (
                     <img
                       src={product.image}
@@ -181,7 +181,6 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
                   {/* Badges no Topo da Imagem */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">
@@ -339,7 +338,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
               {modalTab === 'details' ? (
                 <>
                   <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
-                    <div className="sm:col-span-5 relative bg-[#170C09] rounded-2xl overflow-hidden border border-[#E8C991]/30 aspect-square w-full max-h-[320px] p-0 shadow-inner flex items-center justify-center">
+                    <div className="sm:col-span-5 relative bg-[#0A0403] rounded-2xl overflow-hidden border border-[#E8C991]/30 aspect-[1122/1402] w-full max-h-[380px] shadow-inner flex items-center justify-center">
                       {selectedProduct.image && (
                         <img
                           src={selectedProduct.image}
